@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Dropdown } from 'semantic-ui-react';
+import NavButtons from '/imports/ui/components/NavButtons';
 
 class UserHome extends React.Component {
   render() {
@@ -46,7 +47,7 @@ class UserHome extends React.Component {
 
           </Grid.Column>
           <Grid.Column width={4}>
-
+            <NavButtons/>
           </Grid.Column>
         </Grid>
       </div>
