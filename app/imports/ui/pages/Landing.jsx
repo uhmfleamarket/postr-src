@@ -1,22 +1,39 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Icon, Button, Image, Container } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-        <Grid verticalAlign='middle' textAlign='center' container>
+      <div className='landing-bg'>
+        {/*BUFFER*/}
+        <Container className='landing-buffer'></Container>
 
-          <Grid.Column width={4}>
-            <Image size='small' circular src="/images/meteor-logo.png"/>
-          </Grid.Column>
-
-          <Grid.Column width={8}>
-            <h1>Welcome to this template</h1>
-            <p>Now get to work and modify this app!</p>
-          </Grid.Column>
-
+        {/*TOP ICONS*/}
+        <Grid centered>
+          <Grid centered verticalAlign='middle' columns={3}>
+            <Grid.Column>
+              <Icon inverted className='landing-icon' name='twitter' size='huge'></Icon>
+              <Icon inverted className='landing-icon' name='instagram' size='huge'></Icon>
+              <Icon inverted className='landing-icon' name='facebook f' size='huge'></Icon>
+              <Icon inverted className='landing-icon' name='github' size='huge'></Icon>
+            </Grid.Column>
+            <Grid.Column>
+              <Image centered
+                src='http://manoa.hawaii.edu/confuciusinstitute/wp-content/uploads/2017/03/manoaseal_transparent.png'
+                size='small'
+              />
+            </Grid.Column>
+            <Grid.Column floated='right'>
+              <Button floated='right' inverted size='huge'>Sign Up</Button>
+              <Button floated='right' inverted size='huge'>Login</Button>
+            </Grid.Column>
+          </Grid>
         </Grid>
+
+        {/*LOGO*/}
+        <Image className='postr-logo' centered src='/images/postr_logo.png'/>
+      </div>
     );
   }
 }

@@ -1,0 +1,27 @@
+.landing-bg {
+  background-color: black;
+  background-image: url("http://www.dailyventure.com/media/highres/Diamond-Head-Kaimuki.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.9;
+  height: 1000px;
+}
+
+.landing-buffer {
+  padding-bottom: 40px;
+}
+
+.landing-icon {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.landing-button {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.postr-logo {
+  padding-top: 100px;
+}
