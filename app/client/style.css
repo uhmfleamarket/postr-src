@@ -8,12 +8,20 @@
   height: 1000px;
 }
 
-.landing-buffer {
-  padding-bottom: 40px;
+.profile-bg {
+  background-color: red;
 }
 
 .name {
   font-size: 40px;
+}
+
+.profile-body {
+  font-size: 20px;
+}
+
+.landing-buffer {
+  padding-bottom: 40px;
 }
 
 .landing-icon {
