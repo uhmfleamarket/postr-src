@@ -12,6 +12,10 @@
   padding-bottom: 40px;
 }
 
+.name {
+  font-size: 40px;
+}
+
 .landing-icon {
   padding-left: 15px;
   padding-right: 15px;
