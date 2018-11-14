@@ -7,7 +7,10 @@ import { withRouter, Link } from 'react-router-dom';
 class NavButtons extends React.Component {
   render() {
     return (
-		<><Button>Messages</Button><Button>User</Button></>
+		<>
+			<Button floated="right">Messages</Button>
+			<Button floated="right">User</Button>
+		</>
     );
   }
 }
