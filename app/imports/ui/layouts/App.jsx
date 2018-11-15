@@ -14,6 +14,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import UserHome from '../pages/UserHome';
+import UserProfilePage from '../pages/UserProfilePage'
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               {/*user home is generic for now, make protected by M2*/}
               <Route exact path="/userhome" component={UserHome}/>
+              <Route exact path="/userprofilepage" component={UserProfilePage}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
