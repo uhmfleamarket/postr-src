@@ -3,6 +3,7 @@ import { Grid, Dropdown, Input, Card, Image } from 'semantic-ui-react';
 import NavButtons from '/imports/ui/components/NavButtons';
 import DummyItemCard from '/imports/ui/components/DummyItemCard';
 import { NavLink } from 'react-router-dom';
+import StashItem from '../components/StashItem';
 
 // For M2, redefine alot of the things here as components for modularity's sake. The stash item, item cards, etc.
 
@@ -63,16 +64,9 @@ class UserHome extends React.Component {
                 <Card.Header>Your Stash</Card.Header>
               </Card.Content>
               <Card.Content>
-                {/*Placeholder stuff. By M2, should reflect actual data.*/}
-                <Card as={NavLink} exact to="/itemview">
-                  <Card.Content>
-                    <Image floated='left' size='tiny' src='/images/poof22.png'/>
-                    <Card.Header>[Item Title]</Card.Header>
-                    <Card.Header>[Condition]</Card.Header>
-                    <Card.Header>[Seller]</Card.Header>
-                    <Card.Header>[Price]</Card.Header>
-                  </Card.Content>
-                </Card>
+                <StashItem/>
+                <StashItem/>
+                <StashItem/>
               </Card.Content>
             </Card>
           </Grid.Column>
