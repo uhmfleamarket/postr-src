@@ -22,7 +22,6 @@ class App extends React.Component {
         <Router>
           <div>
             <UserProfilePage/>
-            <Landing/>
           </div>
         </Router>
     );
