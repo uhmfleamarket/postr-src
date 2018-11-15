@@ -33,8 +33,8 @@ class ItemView extends React.Component {
 			//nextArrow: 'next',
     };
     return (
-        <Grid columns='equal' container style={{background:'green'}}>
-          <style>{'body { background: green; }'}</style>
+        <Grid columns='equal' container style={{background:'#e0fbff'}}>
+          <style>{'body { background: #e0fbff; }'}</style>
           <Grid.Row>
             <Grid.Column>
               <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>

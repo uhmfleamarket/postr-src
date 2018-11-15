@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ class NavButtons extends React.Component {
   render() {
     return (
 		<>
-			<Button floated="right">Messages</Button>
+			<Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
 			<Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
 		</>
     );

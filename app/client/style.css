@@ -9,11 +9,11 @@
   opacity: 0.9;
   height: 1000px;
 
-  color: white;
+  /*color: white;*/
 }
 
 .profile-bg {
-  background-color: #024731;
+  background-color: #e0fbff;
   font-family: 'Open Sans', Tahoma, sans-serif;
 }
 
@@ -45,6 +45,7 @@
 
 .user-home {
   background-color: #e0fbff;
+  height: 100%;
 }
 .progress-bar {
   position: relative;
