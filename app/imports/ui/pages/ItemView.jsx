@@ -9,8 +9,8 @@ import NavButtons from '/imports/ui/components/NavButtons';
 import ConditionBar from '/imports/ui/components/ConditionBar';
 import { NavLink } from 'react-router-dom';
 
-//import 'slick-carousel/slick/slick.css';
-//import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 class ItemView extends React.Component {
 
