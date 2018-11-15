@@ -1,13 +1,16 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class NavButtons extends React.Component {
   render() {
     return (
-		<><Button>Messages</Button><Button>User</Button></>
+		<>
+			<Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
+			<Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
+		</>
     );
   }
 }
