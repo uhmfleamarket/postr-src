@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+import StashItem from '/imports/ui/components/StashItem'
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -37,23 +38,15 @@ class Landing extends React.Component {
                   <Button fluid>Other Option</Button>
                 </Grid.Column>
                 <Grid.Column width={4}>
-                  <p className = 'profile-body'>
-                    Past Meetups
-                  </p>
                   <Card>
-                    <Card.Header>Example Listing</Card.Header>
-                    <Card.Meta>Example Owner</Card.Meta>
-                    <Card.Description>Example decription</Card.Description>
+                    <Card.Header>Past Meetups</Card.Header>
+                    <Card.Content><StashItem></StashItem></Card.Content>
                   </Card>
                 </Grid.Column>
                 <Grid.Column width={4}>
-                  <p className = 'profile-body'>
-                    Your Posts
-                  </p>
                   <Card>
-                    <Card.Header>Example Listing</Card.Header>
-                    <Card.Meta>Example Owner</Card.Meta>
-                    <Card.Description>Example decription</Card.Description>
+                    <Card.Header>Your Posts</Card.Header>
+                    <Card.Content><StashItem></StashItem></Card.Content>
                   </Card>
                 </Grid.Column>
                 <Grid.Column width={4} textAlign='center'>
