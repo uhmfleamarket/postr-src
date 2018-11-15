@@ -22,7 +22,7 @@ class App extends React.Component {
         <Router>
           <div>
             <Switch>
-              <Route exact path="/" component={ItemView}/>
+              <Route exact path="/" component={Landing}/>
               <Route path="/itemview" component={ItemView}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
