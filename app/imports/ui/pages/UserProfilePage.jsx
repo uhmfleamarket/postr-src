@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
+import StashItem from '/imports/ui/components/StashItem'
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -38,21 +39,13 @@ class Landing extends React.Component {
                 <p className = 'profile-body'>
                   Past Meetups
                 </p>
-                <Card>
-                  <Card.Header>Example Listing</Card.Header>
-                  <Card.Meta>Example Owner</Card.Meta>
-                  <Card.Description>Example decription</Card.Description>
-                </Card>
+                <StashItem></StashItem>
               </Grid.Column>
               <Grid.Column width={4}>
                 <p className = 'profile-body'>
                   Your Posts
                 </p>
-                <Card>
-                  <Card.Header>Example Listing</Card.Header>
-                  <Card.Meta>Example Owner</Card.Meta>
-                  <Card.Description>Example decription</Card.Description>
-                </Card>
+                <StashItem></StashItem>
               </Grid.Column>
               <Grid.Column width={4} textAlign='center'>
                 <Button fluid>New Post</Button>
