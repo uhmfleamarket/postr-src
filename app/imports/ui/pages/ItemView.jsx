@@ -6,7 +6,6 @@ import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import NavButtons from '/imports/ui/components/NavButtons';
-import Carousel from 'nuka-carousel';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -72,7 +71,7 @@ class ItemView extends React.Component {
                 <p>Facilis libero rerum quaerat itaque laudantium voluptate. Dicta hic blanditiis odit recusandae autem eum molestiae. Deserunt dolore explicabo aperiam eius sunt ab. Qui mollitia ut molestiae. Dolorem cupiditate qui alias consequuntur perferendis tempora adipisci natus. Dolore quam qui velit.…</p>
             </Grid.Column>
             <Grid.Column>
-      $1000
+      <Header as="h1">$1000</Header>
             </Grid.Column>
           </Grid.Row>
         </Grid>
