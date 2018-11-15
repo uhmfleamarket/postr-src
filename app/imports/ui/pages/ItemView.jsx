@@ -6,6 +6,7 @@ import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import NavButtons from '/imports/ui/components/NavButtons';
+import ConditionBar from '/imports/ui/components/ConditionBar';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,7 +26,8 @@ class ItemView extends React.Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      slide: "Image"
+      slide: "Image",
+			dots: false,
     };
     return (
         <Grid columns='equal' container style={{background:'green'}}>
@@ -51,6 +53,7 @@ class ItemView extends React.Component {
                     <Image src='/images/textbooks.jpg'/>
                 </Slider>
               </div>
+							<ConditionBar health='20' />
             </Card>
           </Grid.Row>
           <Grid.Row>
