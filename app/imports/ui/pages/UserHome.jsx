@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Dropdown, Input, Card, Image, Header } from 'semantic-ui-react';
+import { Grid, Dropdown, Input, Card, Image } from 'semantic-ui-react';
 import NavButtons from '/imports/ui/components/NavButtons';
 import DummyItemCard from '/imports/ui/components/DummyItemCard';
 
@@ -40,16 +40,16 @@ class UserHome extends React.Component {
    ];
 
     return (
-      <div>
+      <div className='user-home'>
         {/*TOP COMPONENTS*/}
         <Grid padded>
           <Grid.Column width={4}>
             <Dropdown fluid placeholder='choose a category' selection options={categories} />
           </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column width={9}>
             <Input fluid icon='search' placeholder='Search...'/>
           </Grid.Column>
-          <Grid.Column width={4}>
+          <Grid.Column width={3}>
             <NavButtons/>
           </Grid.Column>
         </Grid>

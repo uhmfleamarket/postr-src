@@ -15,7 +15,7 @@ class DummyItemCard extends React.Component {
           <Image circular floated='left' size='mini' src='/images/poof22.png'/>
           <Card.Header>[Seller]</Card.Header>
           <Card.Header>[Condition]</Card.Header>
-          <Header green floated='right' size='huge'>$20.00</Header>
+          <Header color='green' floated='right' size='huge'>$20.00</Header>
         </Card.Content>
       </Card>
     );
