@@ -28,6 +28,8 @@ class ItemView extends React.Component {
       slidesToScroll: 1,
       slide: "Image",
 			dots: false,
+			//prevArrow: (<Button className="slick-arrow slick-prev">prev</Button>),
+			//nextArrow: 'next',
     };
     return (
         <Grid columns='equal' container style={{background:'green'}}>
@@ -58,15 +60,12 @@ class ItemView extends React.Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Card>
-                <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' width="50%"/>
-                <Card.Content>
+              <Card textAlign="center" style={{width:'50%'}}>
+                <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png'/>
+                <Card.Content textAlign="center">
                   {'{SELLER NAME}'}
-                </Card.Content>
-                <Card.Content>
-                  <div>
+<br />
                   * * * *
-                  </div>
                 </Card.Content>
               </Card>
             </Grid.Column>
