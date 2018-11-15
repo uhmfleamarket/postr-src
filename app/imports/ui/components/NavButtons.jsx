@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class NavButtons extends React.Component {
@@ -9,7 +9,7 @@ class NavButtons extends React.Component {
     return (
 		<>
 			<Button floated="right">Messages</Button>
-			<Button floated="right">User</Button>
+			<Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
 		</>
     );
   }

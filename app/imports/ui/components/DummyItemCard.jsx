@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Image, Header } from 'semantic-ui-react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class DummyItemCard extends React.Component {
   render() {
     return (
-      <Card>
+      <Card as={NavLink} exact to="/itemview">
         <Card.Content>
           <Card.Header>[ITEM TITLE]</Card.Header>
         </Card.Content>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -14,6 +15,7 @@ class Landing extends React.Component {
           <Grid centered>
             <Grid.Row>
               <Grid.Column width={5}>
+                <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
                 <p className = 'name'>
                   Hi Steven,
                 </p>
