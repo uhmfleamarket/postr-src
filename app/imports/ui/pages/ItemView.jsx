@@ -74,7 +74,7 @@ class ItemView extends React.Component {
                 <p>Facilis libero rerum quaerat itaque laudantium voluptate. Dicta hic blanditiis odit recusandae autem eum molestiae. Deserunt dolore explicabo aperiam eius sunt ab. Qui mollitia ut molestiae. Dolorem cupiditate qui alias consequuntur perferendis tempora adipisci natus. Dolore quam qui velit.…</p>
             </Grid.Column>
             <Grid.Column>
-      <Header as="h1">$1000</Header>
+  <span className="pricetag"><Header as="h1">$1,000.00</Header></span>
             </Grid.Column>
           </Grid.Row>
         </Grid>
