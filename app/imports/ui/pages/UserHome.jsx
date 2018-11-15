@@ -64,7 +64,7 @@ class UserHome extends React.Component {
               </Card.Content>
               <Card.Content>
                 {/*Placeholder stuff. By M2, should reflect actual data.*/}
-                <Card  as={NavLink} exact to="/itemview">
+                <Card as={NavLink} exact to="/itemview">
                   <Card.Content>
                     <Image floated='left' size='tiny' src='/images/poof22.png'/>
                     <Card.Header>[Item Title]</Card.Header>
