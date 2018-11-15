@@ -2,16 +2,19 @@
 
 .landing-bg {
   background-color: black;
-  background-image: url("http://www.dailyventure.com/media/highres/Diamond-Head-Kaimuki.jpg");
+  background-image: url("/images/Diamond-Head-Kaimuki.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   opacity: 0.9;
   height: 1000px;
+
+  color: white;
 }
 
 .profile-bg {
-  background-color: red;
+  background-color: #024731;
+  font-family: 'Open Sans', Tahoma, sans-serif;
 }
 
 .name {
