@@ -13,6 +13,7 @@ const ItemSchema = new SimpleSchema({
   owner: String,
   description: String,
   images: [String],
+  active: Boolean,		// if true, the item is displayed on the app
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
