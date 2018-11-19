@@ -10,15 +10,19 @@ function addData(data) {
 
 /** Initialize the collection if empty. */
 if (Items.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
+  if (Meteor.settings.defaultItems) {
     console.log('Creating default items.');
-    Meteor.settings.defaultData.map(data => addData(data));
+    Meteor.settings.defaultItems.map(data => addData(data));
   }
 }
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Item', function publish() {
-  return Items.find({ active: true });
+  return Items.find();
+});
+
+Meteor.publish('OwnerRating', function (owner) {
+  return Meteor.users.find({username:owner}, {fields: {profile:true}});
 });
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
