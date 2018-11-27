@@ -13,6 +13,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import CreateAccountPage from '../pages/CreateAccountPage';
 import UserHome from '../pages/UserHome';
 import UserProfilePage from '../pages/UserProfilePage'
 import ItemView from '../pages/ItemView';
@@ -30,9 +31,10 @@ class App extends React.Component {
               <Route exact path="/userhome" component={UserHome}/>
               <Route exact path="/messages" component={Messages}/>
               <Route exact path="/userprofilepage" component={UserProfilePage}/>
-              <Route exact path="/itemview" component={ItemView}/>
+              <Route exact path="/itemview/:_id" component={ItemView}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <Route path="/CreateAccountPage" component={CreateAccountPage}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
