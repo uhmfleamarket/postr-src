@@ -111,7 +111,7 @@ export default withTracker(({ match }) => {
   const itemsub = Meteor.subscribe('Item');
   const ownersub = Meteor.subscribe('OwnerRating', itemsub.ready() ? Items.findOne().owner : "john@foo.com");
   return {
-    item: Items.findOne(/*match.params._id*/),
+    item: Items.findOne(match.params._id),
     owner: Meteor.users.findOne(),
     ready: itemsub.ready() && ownersub.ready(),
   };
