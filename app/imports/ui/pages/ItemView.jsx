@@ -7,6 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import NavButtons from '/imports/ui/components/NavButtons';
 import ConditionBar from '/imports/ui/components/ConditionBar';
+import ContactUser from '/imports/ui/components/ContactUser';
 import PriceTag from '/imports/ui/components/PriceTag';
 import { NavLink } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
@@ -86,7 +87,10 @@ class ItemView extends React.Component {
             <Grid.Column>
                 <p>Facilis libero rerum quaerat itaque laudantium voluptate. Dicta hic blanditiis odit recusandae autem eum molestiae. Deserunt dolore explicabo aperiam eius sunt ab. Qui mollitia ut molestiae. Dolorem cupiditate qui alias consequuntur perferendis tempora adipisci natus. Dolore quam qui velit.…</p>
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column textAlign="center">
+      <ContactUser item={this.props.item._id} user={this.props.owner._id} image={this.props.item.images[0]} >Contact Seller</ContactUser>
+      <br />
+      <br />
               <PriceTag price={this.props.item.price.toFixed(2)} />
             </Grid.Column>
           </Grid.Row>
