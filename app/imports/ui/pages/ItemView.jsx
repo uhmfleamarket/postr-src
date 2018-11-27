@@ -55,7 +55,7 @@ class ItemView extends React.Component {
                     <Image src='/images/textbooks.jpg'/>
                 </Slider>
               </div>
-							<ConditionBar health='20' />
+              <ConditionBar health='20' />
             </Card>
           </Grid.Row>
           <Grid.Row>
