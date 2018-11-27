@@ -44,6 +44,7 @@ class UserHome extends React.Component {
       <div className='user-home'>
         {/*TOP COMPONENTS*/}
         <Grid padded>
+          <style>{'body { background: ##024731; }'}</style>
           <Grid.Column width={4}>
             <Dropdown fluid placeholder='choose a category' selection options={categories} />
           </Grid.Column>
