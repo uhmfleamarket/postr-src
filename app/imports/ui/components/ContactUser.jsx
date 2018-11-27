@@ -44,7 +44,7 @@ class ContactUser extends React.Component {
                 <TextField name="subject" />
                 <LongTextField name="body" />
                 <HiddenField name="to" value={this.props.user} />
-                <HiddenField name="from" value={"213"} />
+                <HiddenField name="from" value={Meteor.userId()} />
                 <HiddenField name="item" value={this.props.item ? this.props.item : "NONE"} />
                 <Button onClick={this.close}>Cancel</Button>
                 <SubmitField value="Send" />
