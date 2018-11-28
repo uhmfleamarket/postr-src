@@ -12,22 +12,37 @@ import { Items } from '/imports/api/stuff/item';
 // For M2, redefine alot of the things here as components for modularity's sake. The stash item, item cards, etc.
 
 class UserHome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentCategory: 'All',
+      currentSearch: '',
+    };
+    this.refreshCategory = this.refreshCategory.bind(this);
+    this.refreshSearch = this.refreshSearch.bind(this);
+  }
+
+  refreshCategory(e, { value }) {
+    this.setState({ currentCategory: value });
+  }
+
+  refreshSearch(e, value) {
+    this.setState({ currentSearch: value.value });
+    console.log(this.state.currentSearch);
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
-  //TRYING TO GET CATEGORY BAR TO DISPLAY SELECTIVE CONTENT
-  refreshCategory(e, { value }) {
-    console.log(value);
-    let newItems = this.props.items.filter((item) => (item.category === value));
-    console.log(newItems);
-  }
-
   renderPage() {
     //TEMPORARY DATA FOR CATEGORY OPTIONS; TO BE REPLACED BY M2
     const categories = [
+      {
+        text: 'All',
+        value: 'All',
+      },
       {
         text: 'Textbooks',
         value: 'Textbooks',
@@ -69,10 +84,17 @@ class UserHome extends React.Component {
               placeholder='choose a category'
               selection
               options={categories}
+              defaultValue=
+              {
+                {
+                text: 'All',
+                value: 'All',
+                }
+              }
             />
           </Grid.Column>
           <Grid.Column width={9}>
-            <Input fluid icon='search' placeholder='Search...'/>
+            <Input fluid icon='search' placeholder='Search...' onChange={this.refreshSearch}/>
           </Grid.Column>
           <Grid.Column width={3}>
             <NavButtons/>
@@ -87,13 +109,27 @@ class UserHome extends React.Component {
                 <Card.Header>Your Stash</Card.Header>
               </Card.Content>
               <Card.Content>
-                {this.props.items.map((item, index) => <StashItem key={index} item={item}/>)}
+                {
+                  this.props.items
+                    .filter((item) => (item.stashed === true))
+                    .map((item, index) => <StashItem key={index} item={item}/>)
+                }
               </Card.Content>
             </Card>
           </Grid.Column>
           <Grid.Column width={12}>
             <Card.Group itemsPerRow={3}>
-              {this.props.items.map((item, index) => <DummyItemCard key={index} item={item}/>)}
+              {
+                (this.state.currentCategory === 'All') ?
+                  this.props.items
+                    .filter((item) => (item.name.toLowerCase().includes(this.state.currentSearch)))
+                    .map((item, index) => <DummyItemCard key={index} item={item}/>)
+                  :
+                  this.props.items
+                    .filter((item) => (this.state.currentCategory === item.category))
+                    .filter((item) => (item.name.toLowerCase().includes(this.state.currentSearch)))
+                    .map((item, index) => <DummyItemCard key={index} item={item}/>)
+              }
             </Card.Group>
           </Grid.Column>
         </Grid>

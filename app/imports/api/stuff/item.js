@@ -14,6 +14,7 @@ const ItemSchema = new SimpleSchema({
   description: String,
   images: [String],
   category: String,
+  stashed: Boolean,
   active: Boolean,	       // if true, the item is displayed on the app
 }, { tracker: Tracker });
 

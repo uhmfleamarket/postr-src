@@ -20,6 +20,7 @@
       "description": "Used for making your clothes nice.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Appliances",
+      "stashed": false,
       "active": true
     },
     {
@@ -30,6 +31,7 @@
       "description": "Used for making your room cool.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Appliances",
+      "stashed": true,
       "active": true
     },
     {
@@ -40,6 +42,7 @@
       "description": "Used for making your brain good.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Textbooks",
+      "stashed": false,
       "active": true
     },
     {
@@ -50,6 +53,7 @@
       "description": "Used for moving faster than usual.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Vehicles",
+      "stashed": false,
       "active": true
     },
     {
@@ -60,6 +64,7 @@
       "description": "Used for computer things why should I describe a laptop it's 2018 you know what it does.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Tech",
+      "stashed": false,
       "active": true
     },
     {
@@ -70,6 +75,7 @@
       "description": "Where else would you put your milly rock.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Clothes",
+      "stashed": true,
       "active": true
     },
     {
@@ -80,6 +86,7 @@
       "description": "Used for eat.",
       "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
       "category": "Tools",
+      "stashed": true,
       "active": true
     }
   ],

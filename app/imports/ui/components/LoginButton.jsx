@@ -23,11 +23,15 @@ class LoginButton extends React.Component {
     const loggedIn = (Meteor.userId() !== null);
 
     return (
-        <div>{loggedIn ? 
-              <Redirect to =  "/userhome"/> 
-              : 
-              <Button floated = "right " size = "huge" inverted onClick={this.casLogin}>Login</Button>
-        }</div>
+        <div>
+          {
+            loggedIn
+            ?
+              <Redirect to="/userhome"/>
+              :
+              <Button floated="right" size="huge" inverted onClick={this.casLogin}>Login</Button>
+          }
+        </div>
     );
   }
 }

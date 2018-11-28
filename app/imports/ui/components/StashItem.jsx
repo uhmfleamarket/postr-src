@@ -6,10 +6,6 @@ import PropTypes from 'prop-types';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class StashItem extends React.Component {
-  healthString(health) {
-    return health.toString();
-  }
-
   render() {
     return (
       <Card as={NavLink} exact to="/itemview">
@@ -29,7 +25,6 @@ class StashItem extends React.Component {
 StashItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
-
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
 export default withRouter(StashItem);
