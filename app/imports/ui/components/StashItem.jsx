@@ -10,7 +10,7 @@ class StashItem extends React.Component {
     return (
       <Card as={NavLink} exact to="/itemview">
         <Card.Content>
-          <Image floated='left' size='tiny' src='/images/poof22.png'/>
+          <Image floated='left' size='tiny' src={this.props.item.images[0]}/>
           <Card.Header>{this.props.item.name}</Card.Header>
           <Card.Header>{this.props.item.owner}</Card.Header>
           <Card.Header> <Header as='h3' color='green'>${this.props.item.price}</Header> </Card.Header>

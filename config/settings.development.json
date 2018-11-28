@@ -18,7 +18,7 @@
       "quality": 50,
       "owner": "Joe Seller",
       "description": "Used for making your clothes nice.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/iron-1.jpg", "/images/iron-2.jpg"],
       "category": "Appliances",
       "stashed": false,
       "active": true
@@ -29,7 +29,7 @@
       "quality": 75,
       "owner": "Bill Merchant",
       "description": "Used for making your room cool.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/boxfan.jpg"],
       "category": "Appliances",
       "stashed": true,
       "active": true
@@ -40,7 +40,7 @@
       "quality": 100,
       "owner": "Smar T. Pants",
       "description": "Used for making your brain good.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/textbooks.jpg"],
       "category": "Textbooks",
       "stashed": false,
       "active": true
@@ -51,7 +51,7 @@
       "quality": 20,
       "owner": "Driving Man",
       "description": "Used for moving faster than usual.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/usedcar.png"],
       "category": "Vehicles",
       "stashed": false,
       "active": true
@@ -62,7 +62,7 @@
       "quality": 50,
       "owner": "Mr. Hacker Boy",
       "description": "Used for computer things why should I describe a laptop it's 2018 you know what it does.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/laptop.jpg"],
       "category": "Tech",
       "stashed": false,
       "active": true
@@ -73,7 +73,7 @@
       "quality": 50,
       "owner": "Jordan Carter",
       "description": "Where else would you put your milly rock.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/sock.jpg"],
       "category": "Clothes",
       "stashed": true,
       "active": true
@@ -84,7 +84,7 @@
       "quality": 100,
       "owner": "Jack O. F. Federer",
       "description": "Used for eat.",
-      "images": ["app/public/images/iron-1.jpg", "app/public/images/iron-1.jpg"],
+      "images": ["/images/beans.jpg"],
       "category": "Tools",
       "stashed": true,
       "active": true
