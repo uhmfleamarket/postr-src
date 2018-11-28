@@ -32,6 +32,7 @@ class App extends React.Component {
               <Route exact path="/messages" component={Messages}/>
               <Route exact path="/userprofilepage" component={UserProfilePage}/>
               <Route exact path="/itemview/:_id" component={ItemView}/>
+              <Route exact path="/itemview" component={ItemView}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/CreateAccountPage" component={CreateAccountPage}/>
