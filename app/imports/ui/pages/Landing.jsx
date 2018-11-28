@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import LoginButton from '../components/LoginButton';
 
+
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
@@ -30,6 +31,7 @@ class Landing extends React.Component {
               <Grid.Column floated='right'>
 
                 <LoginButton/>
+
 
 
               </Grid.Column>
