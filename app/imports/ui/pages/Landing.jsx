@@ -3,7 +3,6 @@ import { Grid, Icon, Button, Image, Container } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import LoginButton from '../components/LoginButton';
-import LogoutButton from '../components/LogoutButton';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -30,7 +29,6 @@ class Landing extends React.Component {
               </Grid.Column>
               <Grid.Column floated='right'>
                 <LoginButton/>
-                <LogoutButton/>
               </Grid.Column>
             </Grid>
           </Grid>

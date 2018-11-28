@@ -93,10 +93,10 @@ class UserHome extends React.Component {
               }
             />
           </Grid.Column>
-          <Grid.Column width={9}>
+          <Grid.Column width={8}>
             <Input fluid icon='search' placeholder='Search...' onChange={this.refreshSearch}/>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <NavButtons/>
           </Grid.Column>
         </Grid>
