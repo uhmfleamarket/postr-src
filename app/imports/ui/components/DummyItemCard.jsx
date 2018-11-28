@@ -12,7 +12,7 @@ class DummyItemCard extends React.Component {
         <Card.Content>
           <Card.Header>{this.props.item.name}</Card.Header>
         </Card.Content>
-        <Image src='/images/poof22.png'/>
+        <Image src={this.props.item.images[0]}/>
         <Card.Content>
           <Image circular floated='left' size='mini' src='/images/poof22.png'/>
           <Card.Header>{this.props.item.owner}</Card.Header>
