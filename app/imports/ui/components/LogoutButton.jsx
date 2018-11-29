@@ -11,22 +11,15 @@ class LogoutButton extends React.Component {
     event.preventDefault();
     Meteor.logout();
     return false;
-
   }
 
   render() {
-
     return (
-
         <div>{
-          <Button floated="right " size="huge" inverted onClick={this.casLogout}>Logout</Button>
-
+          <Button floated="right " size="huge" onClick={this.casLogout}>Logout</Button>
         }</div>
-
     );
-
   }
-
 }
 
 /** Require a document to be passed to this component. */

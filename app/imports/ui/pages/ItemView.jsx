@@ -165,7 +165,7 @@ class ItemView extends React.Component {
                   {this.props.item.images.map(image => this.showImage(image) )}
                 </Slider>
               </div>
-              <ConditionBar health={this.props.item.quality} />
+              <ConditionBar health='20' />
             </Card>
           </Grid.Row>
           <Grid.Row>

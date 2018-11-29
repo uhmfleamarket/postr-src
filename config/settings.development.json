@@ -1,4 +1,95 @@
 {
+  "defaultAccounts": [
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "john@foo.com", "password": "changeme" }
+  ],
+
+  "defaultData": [
+    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
+    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
+    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
+    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultItems": [
+    {
+      "name": "Iron",
+      "price": 5.00,
+      "quality": 50,
+      "owner": "Joe Seller",
+      "description": "Used for making your clothes nice.",
+      "images": ["/images/iron-1.jpg", "/images/iron-2.jpg"],
+      "category": "Appliances",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Fan",
+      "price": 10.00,
+      "quality": 75,
+      "owner": "Bill Merchant",
+      "description": "Used for making your room cool.",
+      "images": ["/images/boxfan.jpg"],
+      "category": "Appliances",
+      "stashed": true,
+      "active": true
+    },
+    {
+      "name": "Textbook",
+      "price": 50.00,
+      "quality": 100,
+      "owner": "Smar T. Pants",
+      "description": "Used for making your brain good.",
+      "images": ["/images/textbooks.jpg"],
+      "category": "Textbooks",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Car",
+      "price": 1000.00,
+      "quality": 20,
+      "owner": "Driving Man",
+      "description": "Used for moving faster than usual.",
+      "images": ["/images/usedcar.png"],
+      "category": "Vehicles",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Laptop",
+      "price": 500.00,
+      "quality": 50,
+      "owner": "Mr. Hacker Boy",
+      "description": "Used for computer things why should I describe a laptop it's 2018 you know what it does.",
+      "images": ["/images/laptop.jpg"],
+      "category": "Tech",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Sock",
+      "price": 0.69,
+      "quality": 50,
+      "owner": "Jordan Carter",
+      "description": "Where else would you put your milly rock.",
+      "images": ["/images/sock.jpg"],
+      "category": "Clothes",
+      "stashed": true,
+      "active": true
+    },
+    {
+      "name": "Bean",
+      "price": 20.00,
+      "quality": 100,
+      "owner": "Jack O. F. Federer",
+      "description": "Used for eat.",
+      "images": ["/images/beans.jpg"],
+      "category": "Tools",
+      "stashed": true,
+      "active": true
+    }
+  ],
   "cas": {
     "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
     "autoClose": true
@@ -14,6 +105,7 @@
   "allowed_users": [
     "johnson",
     "cmoore",
-    "jx2"
+    "jx2",
+    "davonm"
   ]
 }
