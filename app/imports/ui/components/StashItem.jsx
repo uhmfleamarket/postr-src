@@ -3,7 +3,7 @@ import ConditionBar from '/imports/ui/components/ConditionBar';
 import { Grid, Card, Image, Header, Icon, Button } from 'semantic-ui-react';
 import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Items, ItemSchema } from '/imports/api/stuff/item';
+import { Items } from '/imports/api/stuff/item';
 import { Bert } from 'meteor/themeteorchef:bert';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
@@ -24,13 +24,6 @@ class StashItem extends React.Component {
       Bert.alert({ type: 'success', message: 'Update succeeded' })));
     this.setState({ update: !this.state.update });
   }
-
-  // submit(data) {
-  //   const { firstName, lastName, address, image, description, _id } = data;
-  //   Items.update(_id, { $set: { firstName, lastName, address, image, description } }, (error) => (error ?
-  //     Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
-  //     Bert.alert({ type: 'success', message: 'Update succeeded' })));
-  // }
 
   render() {
     return (
