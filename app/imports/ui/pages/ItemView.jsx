@@ -10,8 +10,42 @@ import NavButtons from '/imports/ui/components/NavButtons';
 import ConditionBar from '/imports/ui/components/ConditionBar';
 import PriceTag from '/imports/ui/components/PriceTag';
 import { NavLink } from 'react-router-dom';
+import ImagesUploader from 'react-images-uploader';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'react-images-uploader/styles.css';
+import 'react-images-uploader/font.css';
+
+class PostrUploader extends ImagesUploader {
+  constructor(props){
+    super(props)
+
+    this.handleImageChange = this.handleImageChange.bind(this)
+  }
+
+  loadImages(files, url, onLoadEnd) {
+    console.log("LOAD IMAGES CALLED")
+  }
+
+  handleImageChange(e) {
+    console.log(e)
+    e.preventDefault();
+    this.setState({
+                  loadState: 'loading',
+    });
+
+
+    console.log(this.state)
+    let imagePreviewUrls = this.state.imagePreviewUrls.concat(["http://localhost:3000/images/textbooks.jpg"])
+    this.setState({
+                  imagePreviewUrls,
+                  optimisticPreviews: [],
+                  loadState: 'success',
+    });
+    console.log(this.state)
+  }
+}
 
 class ItemView extends React.Component {
 
@@ -108,7 +142,7 @@ class ItemView extends React.Component {
         </>
       )
     else
-      return <Image src={image} />
+      return 
   }
 
   price() {
@@ -160,9 +194,17 @@ class ItemView extends React.Component {
           <Grid.Row>
             <Card centered>
               <div>
-                <Slider {...settings}>
-                  {this.props.item.images.map(image => this.showImage(image) )}
-                </Slider>
+                { this.state.edit ? (
+                  <PostrUploader
+                      images={this.props.item.images}
+                      optimisticPreviews
+                      onLoadEnd={(err) => { if(err) { console.log(error(err))} }}
+                      />
+                ) : (
+                  <Slider {...settings}>
+                    {this.props.item.images.map(image => <Image src={image} /> )}
+                  </Slider>
+                )}
               </div>
               <ConditionBar health={this.props.item.quality} />
             </Card>

@@ -32,7 +32,7 @@ class Landing extends React.Component {
                 <p className = 'profile-body'>
                   Profile
                 </p>
-                <Button fluid>New Post</Button>
+                <Button as={NavLink} to="/newpost" fluid>New Post</Button>
                 <Button fluid>Contact Admin</Button>
                 <Button fluid>Other Option</Button>
               </Grid.Column>
