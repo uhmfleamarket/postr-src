@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Items } from '../../api/item/item.js';
-// import { Items } from '../../api/item/item.js';
+import { Items } from '/imports/api/item/item.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
@@ -24,14 +23,11 @@ Meteor.publish('AllItems', function publish() {
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Item', function publish() {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Items.find({ owner: username });
-  }
-  return this.ready();
+  return Items.find()
 });
 
 Meteor.publish('OwnerRating', function (owner) {
+  console.log("getting user profile for "+owner)
   return Meteor.users.find({username:owner}, {fields: {profile:true}});
 });
 

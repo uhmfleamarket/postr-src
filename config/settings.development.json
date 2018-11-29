@@ -1,7 +1,8 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "john@foo.com", "password": "changeme" },
+    { "email": "foo", "password": "changeme" }
   ],
 
   "defaultData": [
@@ -16,7 +17,7 @@
       "name": "Iron",
       "price": 5.00,
       "quality": 50,
-      "owner": "Joe Seller",
+      "owner": "foo",
       "description": "Used for making your clothes nice.",
       "images": ["/images/iron-1.jpg", "/images/iron-2.jpg"],
       "category": "Appliances",
@@ -27,7 +28,7 @@
       "name": "Fan",
       "price": 10.00,
       "quality": 75,
-      "owner": "Bill Merchant",
+      "owner": "foo",
       "description": "Used for making your room cool.",
       "images": ["/images/boxfan.jpg"],
       "category": "Appliances",
@@ -38,7 +39,7 @@
       "name": "Textbook",
       "price": 50.00,
       "quality": 100,
-      "owner": "Smar T. Pants",
+      "owner": "foo",
       "description": "Used for making your brain good.",
       "images": ["/images/textbooks.jpg"],
       "category": "Textbooks",
@@ -49,7 +50,7 @@
       "name": "Car",
       "price": 1000.00,
       "quality": 20,
-      "owner": "Driving Man",
+      "owner": "foo",
       "description": "Used for moving faster than usual.",
       "images": ["/images/usedcar.png"],
       "category": "Vehicles",
@@ -60,7 +61,7 @@
       "name": "Laptop",
       "price": 500.00,
       "quality": 50,
-      "owner": "Mr. Hacker Boy",
+      "owner": "foo",
       "description": "Used for computer things why should I describe a laptop it's 2018 you know what it does.",
       "images": ["/images/laptop.jpg"],
       "category": "Tech",
@@ -71,7 +72,7 @@
       "name": "Sock",
       "price": 0.69,
       "quality": 50,
-      "owner": "Jordan Carter",
+      "owner": "foo",
       "description": "Where else would you put your milly rock.",
       "images": ["/images/sock.jpg"],
       "category": "Clothes",
@@ -82,7 +83,7 @@
       "name": "Bean",
       "price": 20.00,
       "quality": 100,
-      "owner": "Jack O. F. Federer",
+      "owner": "foo",
       "description": "Used for eat.",
       "images": ["/images/beans.jpg"],
       "category": "Tools",

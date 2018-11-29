@@ -251,10 +251,15 @@ ItemView.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   const itemsub = Meteor.subscribe('Item');
-  const ownersub = Meteor.subscribe('OwnerRating', itemsub.ready() ? Items.findOne().owner : "john@foo.com");
+  const ownersub = Meteor.subscribe('OwnerRating', itemsub.ready() ? Items.findOne().owner : "foo");
+  const owner = Meteor.users.findOne()
+  console.log("props:")
+  console.log(owner)
+  console.log(itemsub.ready() ? Items.findOne() : "")
+  console.log(ownersub)
   return {
     item: match.params._id ? Items.findOne(match.params._id) : Items.findOne(),
-    owner: Meteor.users.findOne(),
-    ready: itemsub.ready() && ownersub.ready(),
+    owner: owner,
+    ready: itemsub.ready() && ownersub.ready() && owner,
   };
 })(ItemView);
