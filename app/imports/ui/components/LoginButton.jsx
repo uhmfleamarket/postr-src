@@ -6,13 +6,6 @@ import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class LoginButton extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     loggedIn: false,
-  //   };
-    // this.refreshCategory = this.refreshCategory.bind(this);
-  // }
 
   casLogin(event) {
     event.preventDefault();
@@ -21,7 +14,7 @@ class LoginButton extends React.Component {
         console.log(error);
       }
     };
-    console.log(Meteor.loginWithCas(callback));
+    Meteor.loginWithCas(callback);
 
     return false;
   }
@@ -30,15 +23,11 @@ class LoginButton extends React.Component {
     const loggedIn = (Meteor.userId() !== null);
 
     return (
-        <div>
-          {
-            loggedIn
-            ?
-              <Redirect to="/userhome"/>
+        <div>{loggedIn ?
+              <Redirect to =  "/UserHome"/>
               :
-              <Button floated="right" size="huge" inverted onClick={this.casLogin}>Login</Button>
-          }
-        </div>
+              <Button floated = "right " size = "huge" inverted onClick={this.casLogin}>Login</Button>
+        }</div>
     );
   }
 }
