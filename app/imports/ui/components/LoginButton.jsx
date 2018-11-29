@@ -24,7 +24,7 @@ class LoginButton extends React.Component {
 
     return (
         <div>{loggedIn ?
-              <Redirect to =  "/UserHome"/>
+              <Redirect to = "/userhome"/>
               :
               <Button floated = "right " size = "huge" inverted onClick={this.casLogin}>Login</Button>
         }</div>

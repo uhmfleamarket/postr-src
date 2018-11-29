@@ -19,6 +19,7 @@ class LogoutButton extends React.Component {
     return (
 
         <div>{
+
           <Button floated="right " size="huge" inverted onClick={this.casLogout}>Logout</Button>
 
         }</div>
