@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Image, Card, Container, Grid, Button, Header, Loader } from 'semantic-ui-react';
+import { Image, Card, Grid, Button, Header, Loader } from 'semantic-ui-react';
 import Slider from 'react-slick';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -32,7 +32,7 @@ class ItemView extends React.Component {
 			//nextArrow: 'next',
     };
     return (
-      <>
+        <>
         <style>{'body { background: #e0fbff; }'}</style>
         <NavBar title={(<Header as='h2' textAlign='center'>{'{ITEM NAME}'}</Header>)}>
           <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
@@ -70,7 +70,7 @@ class ItemView extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </>
+          </>
     );
   }
 }
