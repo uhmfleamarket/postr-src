@@ -12,7 +12,9 @@ class NavButtons extends React.Component {
 		<>
 			<Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
 			<Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
-            <LogoutButton/>
+      <LogoutButton/>
+
+
 		</>
     );
   }
