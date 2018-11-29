@@ -20,8 +20,8 @@ class StashItem extends React.Component {
 
   removeFromStash() {
     Items.update(this.props.item._id, { $set: { stashed: false } }, (error) => (error ?
-      Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
-      Bert.alert({ type: 'success', message: 'Update succeeded' })));
+      console.log(error.message) :
+      console.log('Success.')));
     this.setState({ update: !this.state.update });
   }
 
@@ -40,8 +40,8 @@ class StashItem extends React.Component {
           </Card>
         </Grid.Column>
         <Grid.Column width={4}>
-          <Button icon onClick={this.removeFromStash}>
-            <Icon color='red' name='minus' />
+          <Button color='red' icon onClick={this.removeFromStash}>
+            <Icon inverted name='minus' />
           </Button>
         </Grid.Column>
       </Grid>
