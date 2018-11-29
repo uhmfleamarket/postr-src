@@ -29,7 +29,7 @@ class StashItem extends React.Component {
     return (
       <Grid>
         <Grid.Column width={12}>
-          <Card as={NavLink} exact to="/itemview">
+          <Card as={NavLink} exact to={"/itemview/"+this.props.item._id}>
             <Card.Content>
               <Image floated='left' size='tiny' src={this.props.item.images[0]}/>
               <Card.Header>{this.props.item.name}</Card.Header>
