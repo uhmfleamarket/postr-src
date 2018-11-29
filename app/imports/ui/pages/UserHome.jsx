@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid, Dropdown, Input, Card, Loader } from 'semantic-ui-react';
 import NavButtons from '/imports/ui/components/NavButtons';
 import DummyItemCard from '/imports/ui/components/DummyItemCard';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
