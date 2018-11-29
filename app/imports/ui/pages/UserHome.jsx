@@ -75,26 +75,30 @@ class UserHome extends React.Component {
     return (
       <div className='user-home'>
         {/*TOP COMPONENTS*/}
-        <NavBar
-          title={(<Dropdown
+        <Grid padded>
+          <Grid.Column width={4}>
+            <Dropdown
               onChange={this.refreshCategory}
               fluid
               placeholder='choose a category'
               selection
               options={categories}
               defaultValue=
-              {
                 {
-                text: 'All',
-                value: 'All',
+                  {
+                    text: 'All',
+                    value: 'All',
+                  }
                 }
-              }
             />
-        )}
-          center_width="9"
-        >
-          <Input fluid icon='search' placeholder='Search...' onChange={this.refreshSearch}/>
-        </NavBar>
+          </Grid.Column>
+          <Grid.Column width={8}>
+            <Input fluid icon='search' placeholder='Search...' onChange={this.refreshSearch}/>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <NavBar/>
+          </Grid.Column>
+        </Grid>
 
         {/*STASH AND ITEMS*/}
         <Grid padded>

@@ -67,7 +67,7 @@ class ItemView extends React.Component {
   }
 
 	getRating() {
-    let rating = ['*', '*', '*', '*', '*'].slice(0, this.props.owner.profile.rating); 
+    let rating = ['*', '*', '*', '*', '*'].slice(0, this.props.owner.profile.rating);
     return rating.map(star => <Icon name='star' color='yellow' />);
 	}
 
@@ -143,7 +143,7 @@ class ItemView extends React.Component {
         </>
       )
     else
-      return 
+      return
   }
 
   price() {
@@ -243,8 +243,8 @@ class ItemView extends React.Component {
 
 /** Require an array of Item documents in the props. */
 ItemView.propTypes = {
-  //item: PropTypes.object.isRequired,
-  //owner: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired,
+  owner: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 

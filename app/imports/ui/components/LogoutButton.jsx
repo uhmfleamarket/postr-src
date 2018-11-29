@@ -16,7 +16,7 @@ class LogoutButton extends React.Component {
   render() {
     return (
         <div>{
-          <Button floated="right " size="huge" onClick={this.casLogout}>Logout</Button>
+          <Button floated="right" onClick={this.casLogout}>Logout</Button>
         }</div>
     );
   }
