@@ -29,7 +29,7 @@ if (Meteor.users.find().count() === 0) {
 Accounts.validateNewUser(function (user) {
   if (user) {
     const username = user.services.cas.id;
-    if (username ) {
+    if (username) {
       return true;
     }
   }
