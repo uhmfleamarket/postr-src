@@ -13,7 +13,7 @@ export default class Signin extends React.Component {
   /** Initialize component state with properties for login and redirection. */
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,8 +27,8 @@ export default class Signin extends React.Component {
 
   /** Handle Signin submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { username, password } = this.state;
-    Meteor.loginWithPassword(username, password, (err) => {
+    const { email, password } = this.state;
+    Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -50,17 +50,17 @@ export default class Signin extends React.Component {
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
               <Header as="h2" textAlign="center">
-                Login to your account using your UH username !
+                Login to your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
                 <Segment stacked>
                   <Form.Input
-                      label="Username"
+                      label="Email"
                       icon="user"
                       iconPosition="left"
-                      name="username"
-                      type="username"
-                      placeholder="Username"
+                      name="email"
+                      type="email"
+                      placeholder="E-mail address"
                       onChange={this.handleChange}
                   />
                   <Form.Input

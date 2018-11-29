@@ -21,9 +21,6 @@ react-meteor-data@0.2.6-beta.16  # Support withTracker to connect Meteor data to
 
 # Accounts
 accounts-password@1.5.1                # https://guide.meteor.com/accounts.html
-atoy40:accounts-cas
-random@1.0.10
-
 
 # Collection support
 aldeed:collection2-core          # Integrate node-simpl-schema with Meteor collections.
@@ -38,5 +35,3 @@ alanning:roles                   # https://github.com/alanning/meteor-roles
 
 # Prototyping only
 insecure@1.0.7                         # Enable client-side manipulation of Mongo collections.
-
-

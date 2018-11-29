@@ -10,7 +10,7 @@ export default class CreateAccountPage extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '', error: '' };
+    this.state = { email: '', password: '', error: '' };
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,8 +24,8 @@ export default class CreateAccountPage extends React.Component {
 
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { username, password } = this.state;
-    Accounts.createUser({ username: username, password }, (err) => {
+    const { email, password } = this.state;
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -41,17 +41,27 @@ export default class CreateAccountPage extends React.Component {
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
               <Header as="h2" textAlign="center" color = "green">
-                Create an Account to buy and sell as a UH Student!
+                Create an account to start buying and selling!
               </Header>
               <Form onSubmit={this.handleSubmit}>
                 <Segment stacked>
                   <Form.Input
-                      label="Please Enter Your UH Username to Create an Account"
-                      icon="user"
+                      label="Username"
+                      icon=" user circle icon"
                       iconPosition="left"
                       name="username"
-                      type="username"
                       placeholder="Username"
+                      type="username"
+                      onChange={this.handleChange}
+                  />
+
+                  <Form.Input
+                      label="Email"
+                      icon="user"
+                      iconPosition="left"
+                      name="email"
+                      type="email"
+                      placeholder="E-mail address"
                       onChange={this.handleChange}
                   />
                   <Form.Input

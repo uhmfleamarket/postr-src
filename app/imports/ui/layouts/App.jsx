@@ -13,14 +13,11 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-
 import CreateAccountPage from '../pages/CreateAccountPage';
-
 import UserHome from '../pages/UserHome';
 import UserProfilePage from '../pages/UserProfilePage'
 import ItemView from '../pages/ItemView';
 import Messages from '../pages/Messages';
-
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -57,16 +54,16 @@ class App extends React.Component {
  * @param {any} { component: Component, ...rest }
  */
 const ProtectedRoute = ({ component: Component, ...rest }) => (
-    <Route
-        {...rest}
-        render={(props) => {
-          const isLogged = Meteor.userId() !== null;
-          return isLogged ?
-              (<Component {...props} />) :
-              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
-              );
-        }}
-    />
+  <Route
+    {...rest}
+    render={(props) => {
+      const isLogged = Meteor.userId() !== null;
+      return isLogged ?
+          (<Component {...props} />) :
+          (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+      );
+    }}
+  />
 );
 
 /**
