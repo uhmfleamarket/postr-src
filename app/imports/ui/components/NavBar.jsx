@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
+import LogoutButton from './LogoutButton';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class NavBar extends React.Component {
@@ -21,6 +22,7 @@ class NavBar extends React.Component {
               {this.props.title}
             </Grid.Column>
             <Grid.Column width="4" floated="right">
+              <LogoutButton/>
               <Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
               <Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
             </Grid.Column>

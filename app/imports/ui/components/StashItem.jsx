@@ -3,7 +3,7 @@ import ConditionBar from '/imports/ui/components/ConditionBar';
 import { Grid, Card, Image, Header, Icon, Button } from 'semantic-ui-react';
 import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Items } from '/imports/api/stuff/item';
+import { Items } from '/imports/api/item/item';
 import { Bert } from 'meteor/themeteorchef:bert';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */

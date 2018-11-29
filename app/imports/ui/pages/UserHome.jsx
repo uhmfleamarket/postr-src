@@ -1,13 +1,12 @@
 import React from 'react';
 import { Grid, Dropdown, Input, Card, Loader, Image } from 'semantic-ui-react';
-import NavButtons from '/imports/ui/components/NavButtons';
 import NavBar from '/imports/ui/components/NavBar';
 import DummyItemCard from '/imports/ui/components/DummyItemCard';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import StashItem from '../components/StashItem';
-import { Items } from '/imports/api/stuff/item';
+import { Items } from '/imports/api/item/item';
 
 // For M2, redefine alot of the things here as components for modularity's sake. The stash item, item cards, etc.
 
@@ -76,7 +75,7 @@ class UserHome extends React.Component {
     return (
       <div className='user-home'>
         {/*TOP COMPONENTS*/}
-        <NavBar 
+        <NavBar
           title={(<Dropdown
               onChange={this.refreshCategory}
               fluid

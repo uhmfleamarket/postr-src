@@ -3,8 +3,7 @@ import { Card, Image, Header, Button, Icon } from 'semantic-ui-react';
 import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ConditionBar from '/imports/ui/components/ConditionBar';
-import { Items } from '/imports/api/stuff/item';
-import { Bert } from 'meteor/themeteorchef:bert';
+import { Items } from '/imports/api/item/item';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class DummyItemCard extends React.Component {
