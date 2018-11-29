@@ -32,8 +32,6 @@ class Landing extends React.Component {
 
                 <LoginButton/>
 
-
-
               </Grid.Column>
             </Grid>
           </Grid>
