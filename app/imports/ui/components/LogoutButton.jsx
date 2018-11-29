@@ -7,18 +7,29 @@ import { Meteor } from 'meteor/meteor';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class LogoutButton extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {loggedIn: true}
+    this.casLogout = this.casLogout.bind(this)
+  }
+
   casLogout(event) {
     event.preventDefault();
-    Meteor.logout();
+    Meteor.logout(((error) => {
+      if(error)
+        console.log(error)
+        //TODO: use Bert error
+      else
+        this.setState({loggedIn:false})
+    }).bind(this));
     return false;
   }
 
   render() {
-    return (
-        <div>{
-          <Button floated="right " size="huge" onClick={this.casLogout}>Logout</Button>
-        }</div>
-    );
+    return Meteor.userId() !== null ? 
+          <Button floated="right" onClick={this.casLogout}>Logout</Button>
+          :
+          <Redirect to="/" />
   }
 }
 

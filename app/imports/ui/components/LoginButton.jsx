@@ -6,35 +6,38 @@ import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class LoginButton extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     loggedIn: false,
-  //   };
-    // this.refreshCategory = this.refreshCategory.bind(this);
-  // }
+
+  constructor(props) {
+    super(props)
+    this.state = {loggedIn: false}
+    this.casLogin = this.casLogin.bind(this)
+  }
 
   casLogin(event) {
     event.preventDefault();
     const callback = function loginCallback(error) {
       if (error) {
         console.log(error);
+        //TODO: use Bert error
       }
-    };
-    console.log(Meteor.loginWithCas(callback));
+      else
+        this.setState({loggedIn:false});
+    }.bind(this)
+    Meteor.loginWithCas(callback);
 
     return false;
   }
 
   render() {
     const loggedIn = (Meteor.userId() !== null);
+    const newUser = loggedIn && !!Meteor.user() && !Meteor.user().profile.isSetup;
 
     return (
         <div>
           {
             loggedIn
             ?
-              <Redirect to="/userhome"/>
+              <Redirect to={ newUser ? "/createaccount" : "/userhome" }/>
               :
               <Button floated="right" size="huge" inverted onClick={this.casLogin}>Login</Button>
           }

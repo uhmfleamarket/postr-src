@@ -28,16 +28,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               {/*user home is generic for now, make protected by M2*/}
-              <Route exact path="/userhome" component={UserHome}/>
-              <Route exact path="/messages" component={Messages}/>
-              <Route exact path="/userprofilepage" component={UserProfilePage}/>
-              <Route exact path="/itemview" component={ItemView}/>
-              <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Signup}/>
-              <Route path="/CreateAccountPage" component={CreateAccountPage}/>
-              <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+              <ProtectedRoute exact path="/userhome" component={UserHome}/>
+              <ProtectedRoute exact path="/messages" component={Messages}/>
+              <ProtectedRoute exact path="/userprofilepage" component={UserProfilePage}/>
+              <ProtectedRoute exact path="/itemview" component={ItemView}/>
+              <ProtectedRoute path="/createaccount" component={CreateAccountPage}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
@@ -60,7 +55,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
           const isLogged = Meteor.userId() !== null;
           return isLogged ?
               (<Component {...props} />) :
-              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              (<Redirect to={{ pathname: '/', state: { from: props.location } }}/>
               );
         }}
     />
@@ -79,7 +74,7 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
           const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
           return (isLogged && isAdmin) ?
               (<Component {...props} />) :
-              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              (<Redirect to={{ pathname: '/', state: { from: props.location } }}/>
               );
         }}
     />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
@@ -24,29 +25,26 @@ export default class CreateAccountPage extends React.Component {
 
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { username, password } = this.state;
-    Accounts.createUser({ username: username, password }, (err) => {
-      if (err) {
-        this.setState({ error: err.reason });
-      } else {
-        // browserHistory.push('/login');
-      }
-    });
+    const { username, picture } = this.state;
+    let profile = {picture: picture, rating: 3, isSetup: true}
+    Meteor.users.update(Meteor.userId(), {$set: {profile: profile}})
+    this.setState({ isSetup: true})
   }
 
   /** Display the signup form. */
   render() {
     return (
         <Container>
+          {Meteor.user() && Meteor.user().profile && Meteor.user().profile.isSetup ? <Redirect to="/" /> : ""}
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
               <Header as="h2" textAlign="center" color = "green">
                 Create an Account to buy and sell as a UH Student!
               </Header>
               <Form onSubmit={this.handleSubmit}>
-                <Segment stacked>
+                <Segment>
                   <Form.Input
-                      label="Please Enter Your UH Username to Create an Account"
+                      label="Full Name"
                       icon="user"
                       iconPosition="left"
                       name="username"
@@ -55,20 +53,16 @@ export default class CreateAccountPage extends React.Component {
                       onChange={this.handleChange}
                   />
                   <Form.Input
-                      label="Password"
-                      icon="lock"
+                      label="Profile Picture URL"
+                      icon="user"
                       iconPosition="left"
-                      name="password"
-                      placeholder="Password"
-                      type="password"
+                      name="picture"
+                      placeholder="URL to profile picture"
                       onChange={this.handleChange}
                   />
                   <Form.Button content="Submit"/>
                 </Segment>
               </Form>
-              <Message>
-                Already have an account? Login <Link to="/signin">here</Link>
-              </Message>
               {this.state.error === '' ? (
                   ''
               ) : (
