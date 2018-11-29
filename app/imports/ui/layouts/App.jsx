@@ -18,6 +18,7 @@ import UserHome from '../pages/UserHome';
 import UserProfilePage from '../pages/UserProfilePage'
 import ItemView from '../pages/ItemView';
 import Messages from '../pages/Messages';
+import NewPost from '../pages/NewPost';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -31,7 +32,9 @@ class App extends React.Component {
               <Route exact path="/userhome" component={UserHome}/>
               <Route exact path="/messages" component={Messages}/>
               <Route exact path="/userprofilepage" component={UserProfilePage}/>
+              <Route exact path="/itemview/:_id" component={ItemView}/>
               <Route exact path="/itemview" component={ItemView}/>
+              <Route exact path="/newpost" component={NewPost}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/CreateAccountPage" component={CreateAccountPage}/>

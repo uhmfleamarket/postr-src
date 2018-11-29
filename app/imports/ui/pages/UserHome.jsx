@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Dropdown, Input, Card, Loader } from 'semantic-ui-react';
+import { Grid, Dropdown, Input, Card, Loader, Image } from 'semantic-ui-react';
 import NavButtons from '/imports/ui/components/NavButtons';
+import NavBar from '/imports/ui/components/NavBar';
 import DummyItemCard from '/imports/ui/components/DummyItemCard';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
@@ -75,9 +76,8 @@ class UserHome extends React.Component {
     return (
       <div className='user-home'>
         {/*TOP COMPONENTS*/}
-        <Grid padded>
-          <Grid.Column width={4}>
-            <Dropdown
+        <NavBar 
+          title={(<Dropdown
               onChange={this.refreshCategory}
               fluid
               placeholder='choose a category'
@@ -91,14 +91,11 @@ class UserHome extends React.Component {
                 }
               }
             />
-          </Grid.Column>
-          <Grid.Column width={8}>
-            <Input fluid icon='search' placeholder='Search...' onChange={this.refreshSearch}/>
-          </Grid.Column>
-          <Grid.Column width={4}>
-            <NavButtons/>
-          </Grid.Column>
-        </Grid>
+        )}
+          center_width="9"
+        >
+          <Input fluid icon='search' placeholder='Search...' onChange={this.refreshSearch}/>
+        </NavBar>
 
         {/*STASH AND ITEMS*/}
         <Grid padded>
