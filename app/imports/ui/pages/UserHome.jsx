@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Dropdown, Input, Card, Image } from 'semantic-ui-react';
-import NavBar from '/imports/ui/components/NavBar';
+import NavButtons from '/imports/ui/components/NavButtons';
 import DummyItemCard from '/imports/ui/components/DummyItemCard';
 import { NavLink } from 'react-router-dom';
 import StashItem from '../components/StashItem';
@@ -44,13 +44,18 @@ class UserHome extends React.Component {
     return (
       <div className='user-home'>
         {/*TOP COMPONENTS*/}
-        <NavBar
-          title={(<Dropdown fluid placeholder='choose a category' selection options={categories} />
-        )}
-          center_width="9"
-        >
-          <Input fluid icon='search' placeholder='Search...'/>
-        </NavBar>
+        <Grid padded>
+          <style>{'body { background: ##024731; }'}</style>
+          <Grid.Column width={4}>
+            <Dropdown fluid placeholder='choose a category' selection options={categories} />
+          </Grid.Column>
+          <Grid.Column width={9}>
+            <Input fluid icon='search' placeholder='Search...'/>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <NavButtons/>
+          </Grid.Column>
+        </Grid>
 
         {/*STASH AND ITEMS*/}
         <Grid padded>
