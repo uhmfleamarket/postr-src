@@ -42,9 +42,14 @@
 }
 
 .user-home {
+  /*background-image: url("/images/clouds.jpg");*/
+  /*background-size: cover;*/
+  /*background-position: center;*/
+  /*background-attachment: fixed;*/
   background-color: #e0fbff;
   height: 100%;
 }
+
 .progress-bar {
   position: relative;
   height: 20px;

@@ -63,7 +63,7 @@ class ItemView extends React.Component {
                   ))}
                 </Slider>
               </div>
-              <ConditionBar health={this.props.item.quality} />
+              <ConditionBar health='20' />
             </Card>
           </Grid.Row>
           <Grid.Row>
