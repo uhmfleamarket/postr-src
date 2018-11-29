@@ -8,6 +8,7 @@ import { AutoForm, ErrorsField, SubmitField, TextField, LongTextField } from 'un
 import PropTypes from 'prop-types';
 import NavBar from '/imports/ui/components/NavBar';
 import ConditionBar from '/imports/ui/components/ConditionBar';
+import ContactUser from '/imports/ui/components/ContactUser';
 import PriceTag from '/imports/ui/components/PriceTag';
 import { NavLink } from 'react-router-dom';
 import ImagesUploader from 'react-images-uploader';
@@ -228,6 +229,9 @@ class ItemView extends React.Component {
                   ))
               :""}
               <br/><br/>
+              <ContactUser item={this.props.item._id} user={this.props.owner._id} image={this.props.item.images[0]} >Contact Seller</ContactUser>
+              <br />
+              <br />
               {this.price()}
             </Grid.Column>
           </Grid.Row>
