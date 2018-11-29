@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import { Items } from '/imports/api/item/item';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import NavButtons from '/imports/ui/components/NavButtons';
+import NavBar from '/imports/ui/components/NavBar';
 import ConditionBar from '/imports/ui/components/ConditionBar';
 import ContactUser from '/imports/ui/components/ContactUser';
 import PriceTag from '/imports/ui/components/PriceTag';
@@ -28,7 +28,7 @@ class ItemView extends React.Component {
   }
 
 	getRating() {
-    let rating = ['*', '*', '*', '*', '*'].slice(0, this.props.owner.profile.rating); 
+    let rating = ['*', '*', '*', '*', '*'].slice(0, this.props.owner.profile.rating);
     return rating.map(star => <Icon name='star' color='yellow' />);
 	}
 
@@ -48,19 +48,12 @@ class ItemView extends React.Component {
     const star = <Icon name='star' />;
 		const rating = [star, star, star, star, star];
     return (
-        <Grid columns='equal' container style={{background:'#e0fbff'}}>
-          <style>{'body { background: #e0fbff; }'}</style>
-          <Grid.Row>
-            <Grid.Column>
-              <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Header as='h2' textAlign='center'>{this.props.item.name}</Header>
-            </Grid.Column>
-            <Grid.Column>
-              <NavButtons />
-            </Grid.Column>
-          </Grid.Row>
+      <>
+        <style>{'body { background: #e0fbff; }'}</style>
+        <NavBar title={(<Header as='h2' textAlign='center'>{'{ITEM NAME}'}</Header>)}>
+          <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
+        </NavBar>
+        <Grid columns='equal' container>
           <Grid.Row>
             <Card centered>
               <div>
@@ -95,6 +88,7 @@ class ItemView extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+      </>
     );
   }
 }
