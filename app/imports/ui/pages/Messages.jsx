@@ -6,6 +6,7 @@ class Messages extends React.Component {
   render() {
     return (
       <div className='user-home'>
+        <NavBar title="Messages" />
         <Grid padded>
           <Grid.Column width={4}>
             <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
