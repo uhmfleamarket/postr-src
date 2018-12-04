@@ -5,6 +5,7 @@ import {AutoForm, TextField, NumField, SelectField, SubmitField, HiddenField, Lo
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 import ImagesUploader from 'react-images-uploader';
+import NavBar from '/imports/ui/components/NavBar'
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 
@@ -69,6 +70,8 @@ class AddItem extends React.Component {
   render() {
     console.log(this.state)
     return (
+      <div>
+        <NavBar />
         <Grid container centered>
           <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ItemSchema} onSubmit={this.submit}>
             <Grid.Row>
@@ -104,6 +107,7 @@ class AddItem extends React.Component {
             </Grid.Row>
           </AutoForm>
         </Grid>
+      </div>
     );
   }
 }
