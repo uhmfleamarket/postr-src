@@ -1,12 +1,13 @@
 import React from 'react';
 import { Grid, Header, Comment, Form, Button, Card, Image } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+import NavBar from '/imports/ui/components/NavBar'
 
 class Messages extends React.Component {
   render() {
     return (
       <div className='user-home'>
-        <NavBar title="Messages" />
+        <NavBar title=<Header as="h2">Messages</Header> />
         <Grid padded>
           <Grid.Column width={4}>
             <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
