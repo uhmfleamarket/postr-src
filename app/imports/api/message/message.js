@@ -9,9 +9,12 @@ const Messages = new Mongo.Collection('Messages');
 const MessageSchema = new SimpleSchema({
   to: String,
   from: String,
+  date: String,
   item: String,
   subject: String,
   body: String,
+  parentMessage: String,   // the OP/parent message, or "NONE" for the parent
+  image: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

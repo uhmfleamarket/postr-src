@@ -179,7 +179,6 @@ class ItemView extends React.Component {
     this.item = this.props.item;
     return (
       <AutoForm schema={ItemSchema} model={this.props.item} onSubmit={this.updatePost}>
-        <style>{'body { background: #e0fbff; }'}</style>
         <NavBar title={(<Header as='h2' textAlign='center'>{this.props.item.name}</Header>)}>
           <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
         </NavBar>
@@ -253,10 +252,6 @@ export default withTracker(({ match }) => {
   const itemsub = Meteor.subscribe('Item');
   const ownersub = Meteor.subscribe('OwnerRating', itemsub.ready() ? Items.findOne().owner : "foo");
   const owner = Meteor.users.findOne()
-  console.log("props:")
-  console.log(owner)
-  console.log(itemsub.ready() ? Items.findOne() : "")
-  console.log(ownersub)
   return {
     item: match.params._id ? Items.findOne(match.params._id) : Items.findOne(),
     owner: owner,

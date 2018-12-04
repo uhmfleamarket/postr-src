@@ -25,8 +25,8 @@ export default class CreateAccountPage extends React.Component {
 
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { username, picture } = this.state;
-    let profile = {picture: picture, rating: 3, isSetup: true}
+    const { name, picture } = this.state;
+    let profile = {name: name, picture: picture, rating: 3, isSetup: true}
     Meteor.users.update(Meteor.userId(), {$set: {profile: profile}})
     this.setState({ isSetup: true})
   }
@@ -47,9 +47,9 @@ export default class CreateAccountPage extends React.Component {
                       label="Full Name"
                       icon="user"
                       iconPosition="left"
-                      name="username"
+                      name="name"
                       type="username"
-                      placeholder="Username"
+                      placeholder="Full Name"
                       onChange={this.handleChange}
                   />
                   <Form.Input

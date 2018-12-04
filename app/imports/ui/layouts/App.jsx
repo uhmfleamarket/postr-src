@@ -17,7 +17,7 @@ import CreateAccountPage from '../pages/CreateAccountPage';
 import UserHome from '../pages/UserHome';
 import UserProfilePage from '../pages/UserProfilePage'
 import ItemView from '../pages/ItemView';
-import Messages from '../pages/Messages';
+import MessagesPage from '../pages/MessagesPage';
 import NewPost from '../pages/NewPost';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -31,7 +31,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               {/*user home is generic for now, make protected by M2*/}
               <ProtectedRoute exact path="/userhome" component={UserHome}/>
-              <ProtectedRoute exact path="/messages" component={Messages}/>
+              <ProtectedRoute exact path="/messages" component={MessagesPage}/>
               <ProtectedRoute exact path="/userprofilepage" component={UserProfilePage}/>
               <ProtectedRoute exact path="/itemview/:_id" component={ItemView}/>
               <ProtectedRoute path="/createaccount" component={CreateAccountPage}/>

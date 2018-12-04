@@ -10,7 +10,7 @@ function createUser(email, password, role) {
     username: email,
     email: email,
     password: password,
-    profile: {rating: 3, picture: "https://react.semantic-ui.com/images/avatar/large/matthew.png"},
+    profile: {rating: 3, picture: "https://react.semantic-ui.com/images/avatar/large/matthew.png", name: email},
   });
   if (role === 'admin') {
     Roles.addUsersToRoles(userID, 'admin');
@@ -25,6 +25,15 @@ if (Meteor.users.find().count() === 0) {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');}
 }
 
+Meteor.publish("userdata", () => {
+  return Meteor.users.find({}, {fields: {username: 1, profile: 1, "services.cas.id":1}})
+})
+
+// set username on login
+Accounts.onLogin((a)=> {
+  Meteor.users.update(Meteor.userId(), {$set: {username: Meteor.user().services.cas.id}})
+})
+
 /* Validate username, sending a specific error message on failure. */
 Accounts.validateNewUser(function (user) {
   if (user) {
@@ -35,7 +44,6 @@ Accounts.validateNewUser(function (user) {
   }
   throw new Meteor.Error(403, 'User not in the allowed list');
 });
-
 
 if (!Meteor.settings.cas) {
   console.log('CAS settings not found! Hint: "meteor --settings ../config/settings.development.json"');

@@ -4,7 +4,7 @@ import { Messages } from '../../api/message/message.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding message: ${data.name}`);
+  console.log(`  Adding message: ${data.subject}`);
   Messages.insert(data);
 }
 
@@ -17,14 +17,17 @@ if (Messages.find().count() === 0) {
 }
 
 /** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Message', function publish() {
-  return Messages.find();
+Meteor.publish('Conversation', function publish(parentMessage) {
+  if(this.userId){
+    const email = Meteor.users.findOne(this.userId).services.cas.id;
+    return Messages.find({ parentMessage: parentMessage });
+  }
 });
 
-/** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
-Meteor.publish('MessageAdmin', function publish() {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Messages.find();
+Meteor.publish('Message', function publish() {
+  if(this.userId){
+    const email = Meteor.users.findOne(this.userId).services.cas.id;
+    return Messages.find({to: email});
   }
-  return this.ready();
 });
+
