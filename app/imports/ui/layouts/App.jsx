@@ -32,6 +32,7 @@ class App extends React.Component {
               {/*user home is generic for now, make protected by M2*/}
               <Route exact path="/userhome" component={UserHome}/>
               <Route exact path="/messages" component={Messages}/>
+              <Route exact path="/newpost" component={NewPost}/>
               <Route exact path="/userprofilepage" component={UserProfilePage}/>
               <Route exact path="/itemview/:_id" component={ItemView}/>
               <Route path="/createaccount" component={CreateAccountPage}/>
