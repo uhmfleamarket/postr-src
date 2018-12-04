@@ -45,7 +45,7 @@ class Conversation extends React.Component {
             <HiddenField name="parentMessage" value={this.props.parentMessage._id} />
             <HiddenField name="image" value={this.props.parentMessage.image} />
             <HiddenField name="date" value={new Date()} />
-            <SubmitField value="Send" />
+            <Button inverted content='Send' labelPosition='left' icon='telegram plane' primary />
             <ErrorsField/>
           </AutoForm>
         </Comment.Group>
