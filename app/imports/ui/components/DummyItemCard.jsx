@@ -27,11 +27,11 @@ class DummyItemCard extends React.Component {
   render() {
     return (
         <Card>
-          <Card.Content as={NavLink} exact to="/itemview">
+          <Card.Content as={NavLink} exact to={"/itemview/"+this.props.item._id} >
             <Card.Header>{this.props.item.name}</Card.Header>
           </Card.Content>
-            <Image as={NavLink} exact to="/itemview" src={this.props.item.images[0]}/>
-          <Card.Content as={NavLink} exact to="/itemview">
+            <Image as={NavLink} exact to={"/itemview/"+this.props.item._id} src={this.props.item.images[0]}/>
+          <Card.Content as={NavLink} exact to={"/itemview/"+this.props.item._id}>
             <Image circular floated='left' size='mini' src='/images/poof22.png'/>
             <Card.Header>{this.props.item.owner}</Card.Header>
             <ConditionBar health={this.props.item.quality.toString}/>

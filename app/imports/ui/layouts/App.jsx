@@ -26,6 +26,7 @@ class App extends React.Component {
     return (
         <Router>
           <div>
+            <style>{'body { background: #e0fbff; }'}</style>
             <Switch>
               <Route exact path="/" component={Landing}/>
               {/*user home is generic for now, make protected by M2*/}

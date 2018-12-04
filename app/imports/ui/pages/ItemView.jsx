@@ -180,7 +180,7 @@ class ItemView extends React.Component {
     return (
       <AutoForm schema={ItemSchema} model={this.props.item} onSubmit={this.updatePost}>
         <style>{'body { background: #e0fbff; }'}</style>
-        <NavBar title={(<Header as='h2' textAlign='center'>{'{ITEM NAME}'}</Header>)}>
+        <NavBar title={(<Header as='h2' textAlign='center'>{this.props.item.name}</Header>)}>
           <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
         </NavBar>
         <Grid columns='equal' container>
