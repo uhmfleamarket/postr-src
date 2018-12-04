@@ -19,10 +19,10 @@ class LoginButton extends React.Component {
       if (error) {
         console.log(error);
         //TODO: use Bert error
+      } else {
+        this.setState({ loggedIn: false });
       }
-      else
-        this.setState({loggedIn:false});
-    }.bind(this)
+    }.bind(this);
     Meteor.loginWithCas(callback);
 
     return false;

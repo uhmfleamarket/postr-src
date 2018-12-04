@@ -1,11 +1,11 @@
 import React from 'react';
 import { Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
-import StashItem from '/imports/ui/components/StashItem'
+import StashItem from '../components/StashItem';
 
 /** A simple static component to render some text for the landing page. */
 
-class Landing extends React.Component {
+class UserProfilePage extends React.Component {
 
   state = { EditingMode:  0, userProfile: {name: "Steven Shmleeven", address: "UH Manoa Wainani Dorm", number: "(808) 555-2324"}}
 
@@ -16,7 +16,6 @@ class Landing extends React.Component {
   editContact = () => this.setState(previousState => ({ EditingMode: 3 }))
 
   finishEdits = () => this.setState(previousState => ({ EditingMode: 0 }))
-
 
   render() {
     console.log("oops");
@@ -32,49 +31,38 @@ class Landing extends React.Component {
               <Grid.Column width={5}>
                 <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
                 <p className = 'name'>
-                  Hi Steven,
+                  Hi {this.state.userProfile.name},
                 </p>
               </Grid.Column>
               <Grid.Column width={5}>
               </Grid.Column>
-              <Grid.Column width={5} textAlign='right'>
-                <Icon inverted className='landing-icon' name='chat' size='big'></Icon>
-                <Icon inverted className='landing-icon' name='circle' size='big'></Icon>
+              <Grid.Column width={5} textalign='right'>
+                <Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Grid.Column width={3}>
-                <p className = 'profile-body'>
-                  Profile
-                </p>
-                <Button as={NavLink} to="/newpost" fluid>New Post</Button>
-                <Button fluid>Contact Admin</Button>
-                <Button fluid>Other Option</Button>
-              </Grid.Column>
+              <ProfileCard EditingMode = {this.state.EditingMode} parentPage = {this}/>
               <Grid.Column width={4}>
-                <p className = 'profile-body'>
-                  Past Meetups
-                </p>
                 <Card>
-                  <Card.Header>Example Listing</Card.Header>
-                  <Card.Meta>Example Owner</Card.Meta>
-                  <Card.Description>Example decription</Card.Description>
+                  <Card.Header>Past Meetups</Card.Header>
+                  <Card.Content>
+                    {/*<StashItem></StashItem>*/}
+                  </Card.Content>
                 </Card>
               </Grid.Column>
               <Grid.Column width={4}>
-                <p className = 'profile-body'>
-                  Your Posts
-                </p>
                 <Card>
-                  <Card.Header>Example Listing</Card.Header>
-                  <Card.Meta>Example Owner</Card.Meta>
-                  <Card.Description>Example decription</Card.Description>
+                  <Card.Header>Your Posts</Card.Header>
+                  <Card.Content>
+                    {/*<StashItem></StashItem>*/}
+                  </Card.Content>
                 </Card>
               </Grid.Column>
-              <Grid.Column width={4} textAlign='center'>
+              <Grid.Column width={4} textalign='center'>
+
                 <Button fluid>New Post</Button>
+                <Button fluid>Edit / Remove a Post</Button>
                 <Button fluid>Contact Admin</Button>
-                <Button fluid>Other Option</Button>
               </Grid.Column>
 
             </Grid.Row>
@@ -84,12 +72,13 @@ class Landing extends React.Component {
     );
   }
 }
+
 class ProfileCard extends React.Component {
   render() {
     if (this.props.EditingMode == 0) {
       return (
           <Grid.Column width={3}>
-            <Card textAlign="center" style={{width:'100%'}}>
+            <Card textalign="center" style={{width:'100%'}}>
               <Card.Content>
                 <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png'/>
                 <br />
@@ -113,7 +102,7 @@ class ProfileCard extends React.Component {
     } else if (this.props.EditingMode == 1) {
       return (
           <Grid.Column width={3}>
-            <Card textAlign="center" style={{width:'100%'}}>
+            <Card textalign="center" style={{width:'100%'}}>
               <Card.Content>
                 <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png'/>
                 <br />
@@ -133,7 +122,7 @@ class ProfileCard extends React.Component {
     } else if (this.props.EditingMode == 2) {
       return (
           <Grid.Column width={3}>
-            <Card textAlign="center" style={{width:'100%'}}>
+            <Card textalign="center" style={{width:'100%'}}>
               <Card.Content>
                 <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png'/>
                 <br />
@@ -149,7 +138,7 @@ class ProfileCard extends React.Component {
     } else if (this.props.EditingMode == 3) {
       return (
           <Grid.Column width={3}>
-            <Card textAlign="center" style={{width:'100%'}}>
+            <Card textalign="center" style={{width:'100%'}}>
               <Card.Content>
                 <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png'/>
                 <br />
@@ -170,4 +159,4 @@ class ProfileCard extends React.Component {
 }
 
 
-export default Landing;
+export default UserProfilePage;

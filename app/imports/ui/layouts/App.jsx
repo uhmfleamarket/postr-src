@@ -15,7 +15,7 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import CreateAccountPage from '../pages/CreateAccountPage';
 import UserHome from '../pages/UserHome';
-import UserProfilePage from '../pages/UserProfilePage'
+import UserProfilePage from '../pages/UserProfilePage';
 import ItemView from '../pages/ItemView';
 import Messages from '../pages/Messages';
 import NewPost from '../pages/NewPost';
@@ -29,13 +29,13 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               {/*user home is generic for now, make protected by M2*/}
-              <ProtectedRoute exact path="/userhome" component={UserHome}/>
-              <ProtectedRoute exact path="/messages" component={Messages}/>
-              <ProtectedRoute exact path="/userprofilepage" component={UserProfilePage}/>
-              <ProtectedRoute exact path="/itemview" component={ItemView}/>
-              <ProtectedRoute path="/createaccount" component={CreateAccountPage}/>
+              <Route exact path="/userhome" component={UserHome}/>
+              <Route exact path="/messages" component={Messages}/>
+              <Route exact path="/userprofilepage" component={UserProfilePage}/>
+              <Route exact path="/itemview" component={ItemView}/>
+              <Route path="/createaccount" component={CreateAccountPage}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
-              <ProtectedRoute path="/signout" component={Signout}/>
+              <Route path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
           </div>

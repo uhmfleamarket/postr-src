@@ -22,7 +22,7 @@ class NavBar extends React.Component {
               {this.props.title}
             </Grid.Column>
             <Grid.Column width="4" floated="right">
-              <LogoutButton/>
+              {/*<LogoutButton/>*/}
               <Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
               <Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
             </Grid.Column>
