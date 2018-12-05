@@ -73,11 +73,6 @@ class DummyItemCard extends React.Component {
               :
               <div></div>
           }
-         // {this.props.hideStash ? "" : (
-         //   <Button color='green' icon onClick={this.addToStash}>
-         //     <Icon inverted name='plus' />
-         //   </Button>
-         // )}
         </Card>
     );
   }

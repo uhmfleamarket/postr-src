@@ -29,6 +29,8 @@ class LoginButton extends React.Component {
   }
 
   render() {
+    Meteor.loginWithPassword('john@foo.com', 'changeme');
+
     const loggedIn = (Meteor.userId() !== null);
     const newUser = loggedIn && !!Meteor.user() && !Meteor.user().profile.isSetup;
 
