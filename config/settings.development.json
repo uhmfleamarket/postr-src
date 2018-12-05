@@ -91,6 +91,41 @@
       "active": true
     }
   ],
+  "defaultMessages":[
+    {
+      "to": "random",
+      "from": "someone",
+      "date": "earlier",
+      "item": "NONE",
+      "subject": "test message",
+      "body": "This is a test message....",
+      "parentMessage": "NONE",
+      "image": "/images/poof22.png",
+      "_id": "0122"
+    },
+    {
+      "to": "haigh",
+      "from": "foo",
+      "date": "earlier",
+      "item": "NONE",
+      "subject": "test message",
+      "body": "This is a test message....",
+      "parentMessage": "NONE",
+      "image": "/images/poof22.png",
+      "_id": "0123"
+    },
+    {
+      "from": "haigh",
+      "to": "foo",
+      "date": "now",
+      "item": "NONE",
+      "subject": "test message",
+      "body": "This is also a test message....",
+      "parentMessage": "0123",
+      "image": "/images/poof22.png",
+      "_id": "0124"
+    }
+  ],
   "cas": {
     "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
     "autoClose": true
