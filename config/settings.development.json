@@ -32,7 +32,7 @@
       "description": "Used for making your room cool.",
       "images": ["/images/boxfan.jpg"],
       "category": "Appliances",
-      "stashed": true,
+      "stashed": false,
       "active": true
     },
     {
@@ -76,7 +76,7 @@
       "description": "Where else would you put your milly rock.",
       "images": ["/images/sock.jpg"],
       "category": "Clothes",
-      "stashed": true,
+      "stashed": false,
       "active": true
     },
     {
@@ -87,7 +87,7 @@
       "description": "Used for eat.",
       "images": ["/images/beans.jpg"],
       "category": "Tools",
-      "stashed": true,
+      "stashed": false,
       "active": true
     }
   ],

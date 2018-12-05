@@ -19,6 +19,7 @@ class UserProfilePage extends React.Component {
 
   render() {
     console.log("oops");
+
     return (
       <div className='profile-bg'>
         {/*BUFFER*/}
@@ -60,7 +61,7 @@ class UserProfilePage extends React.Component {
               </Grid.Column>
               <Grid.Column width={4} textalign='center'>
 
-                <Button fluid>New Post</Button>
+                <Button fluid as={NavLink} exact to="/newpost" floated="right">New Post</Button>
                 <Button fluid>Edit / Remove a Post</Button>
                 <Button fluid>Contact Admin</Button>
               </Grid.Column>

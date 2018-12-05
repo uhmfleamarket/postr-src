@@ -35,6 +35,7 @@ class App extends React.Component {
               <Route exact path="/userprofilepage" component={UserProfilePage}/>
               <Route exact path="/itemview/:_id" component={ItemView}/>
               <Route path="/createaccount" component={CreateAccountPage}/>
+              <Route path="/newpost" component={NewPost}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <Route path="/signout" component={Signout}/>
               <Route component={NotFound}/>
