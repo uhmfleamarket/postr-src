@@ -9,6 +9,8 @@ import StashItem from '../components/StashItem';
 import NavBar from '/imports/ui/components/NavBar'
 import SimpleSchema from 'simpl-schema';
 import { Messages, MessageSchema } from '/imports/api/message/message'
+import { Items } from '/imports/api/item/item';
+import DummyItemCard from '/imports/ui/components/DummyItemCard';
 import ConversationList from '/imports/ui/components/ConversationList'
 
 /** A simple static component to render some text for the landing page. */
@@ -84,6 +86,7 @@ class UserProfilePage extends React.Component {
   }
 
   renderPage() {
+    console.log(this.props.items)
     return (
       <div className='profile-bg'>
       <AutoForm schema={ProfileSchema} model={Meteor.user().profile} onSubmit={this.saveChanges}>
@@ -130,7 +133,8 @@ class UserProfilePage extends React.Component {
                 <Card>
                   <Card.Header>Your Posts</Card.Header>
                   <Card.Content>
-                    {/*<StashItem></StashItem>*/}
+                    {this.props.items.map((item, index) => <DummyItemCard key={index} item={item} hideStash={true} />)
+                    }
                   </Card.Content>
                 </Card>
               </Grid.Column>
@@ -151,13 +155,16 @@ class UserProfilePage extends React.Component {
 
 UserProfilePage.propTypes = {
   messages: PropTypes.object.isRequired,
+  items: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(() => {
-  const subscription = Meteor.subscribe('Message');
+  const msgsub = Meteor.subscribe('Message');
+  const itemsub = Meteor.subscribe('AllItems');
   return {
     messages: Messages.find({parentMessage:"NONE"}).fetch(),
-    ready: subscription.ready(),
+    items: Items.find({owner: "foo"}).fetch(),
+    ready: msgsub.ready() && itemsub.ready(),
   };
 })(UserProfilePage);

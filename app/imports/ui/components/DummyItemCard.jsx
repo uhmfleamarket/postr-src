@@ -37,9 +37,11 @@ class DummyItemCard extends React.Component {
             <ConditionBar health={this.props.item.quality.toString}/>
             <Header color='green' floated='right' size='huge'>${this.props.item.price}</Header>
           </Card.Content>
-          <Button color='green' icon onClick={this.addToStash}>
-            <Icon inverted name='plus' />
-          </Button>
+          {this.props.hideStash ? "" : (
+            <Button color='green' icon onClick={this.addToStash}>
+              <Icon inverted name='plus' />
+            </Button>
+          )}
         </Card>
     );
   }
