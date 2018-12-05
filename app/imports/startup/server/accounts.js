@@ -31,7 +31,8 @@ Meteor.publish("userdata", () => {
 
 // set username on login
 Accounts.onLogin((a)=> {
-  Meteor.users.update(Meteor.userId(), {$set: {username: Meteor.user().services.cas.id}})
+  if(!!Meteor.user().services.cas && !!Meteor.user().services.cas.id)
+    Meteor.users.update(Meteor.userId(), {$set: {username: Meteor.user().services.cas.id}})
 })
 
 /* Validate username, sending a specific error message on failure. */
