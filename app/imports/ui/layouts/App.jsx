@@ -17,7 +17,7 @@ import CreateAccountPage from '../pages/CreateAccountPage';
 import UserHome from '../pages/UserHome';
 import UserProfilePage from '../pages/UserProfilePage';
 import ItemView from '../pages/ItemView';
-import Messages from '../pages/Messages';
+import MessagesPage from '../pages/MessagesPage';
 import NewPost from '../pages/NewPost';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -29,14 +29,12 @@ class App extends React.Component {
             <style>{'body { background: #e0fbff; }'}</style>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              {/*user home is generic for now, make protected by M2*/}
-              <Route exact path="/userhome" component={UserHome}/>
-              <Route exact path="/messages" component={Messages}/>
-              <Route exact path="/newpost" component={NewPost}/>
-              <Route exact path="/userprofilepage" component={UserProfilePage}/>
-              <Route exact path="/itemview/:_id" component={ItemView}/>
-              <Route path="/createaccount" component={CreateAccountPage}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+              <ProtectedRoute exact path="/userhome" component={UserHome}/>
+              <ProtectedRoute exact path="/messages" component={MessagesPage}/>
+              <ProtectedRoute exact path="/newpost" component={NewPost}/>
+              <ProtectedRoute exact path="/userprofilepage" component={UserProfilePage}/>
+              <ProtectedRoute exact path="/itemview/:_id" component={ItemView}/>
+              <ProtectedRoute path="/createaccount" component={CreateAccountPage}/>
               <Route path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

@@ -44,8 +44,11 @@ class ContactUser extends React.Component {
                 <TextField name="subject" />
                 <LongTextField name="body" />
                 <HiddenField name="to" value={this.props.user} />
-                <HiddenField name="from" value={Meteor.userId()} />
+                <HiddenField name="from" value={Meteor.user().username} />
                 <HiddenField name="item" value={this.props.item ? this.props.item : "NONE"} />
+                <HiddenField name="parentMessage" value="NONE" />
+                <HiddenField name="image" value={this.props.image ? this.props.image : Meteor.user().profile.picture} />
+                <HiddenField name="date" value={new Date()} />
                 <Button onClick={this.close}>Cancel</Button>
                 <SubmitField value="Send" />
                 <ErrorsField/>
