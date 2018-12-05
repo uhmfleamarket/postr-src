@@ -1,8 +1,8 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" },
-    { "email": "foo", "password": "changeme" }
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "profilePicture": "/images/foo.jpg" },
+    { "email": "john@foo.com", "password": "changeme", "profilePicture": "/images/john.jpg" },
+    { "email": "foo", "password": "changeme", "profilePicture": "/images/mia.jpg" }
   ],
 
   "defaultData": [

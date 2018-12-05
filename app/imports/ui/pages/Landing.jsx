@@ -7,6 +7,8 @@ import LoginButton from '../components/LoginButton';
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
+    Meteor.loginWithPassword('foo', 'changeme');
+
     return (
         <div className='landing-bg'>
           {/*BUFFER*/}

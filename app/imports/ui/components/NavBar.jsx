@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, Grid } from 'semantic-ui-react';
+import { Button, Grid, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
-import LogoutButton from './LogoutButton';
 import { Meteor } from 'meteor/meteor';
+import LogoutButton from './LogoutButton';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class NavBar extends React.Component {
