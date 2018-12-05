@@ -83,13 +83,7 @@ class UserHome extends React.Component {
               placeholder='choose a category'
               selection
               options={categories}
-              defaultValue=
-                {
-                  {
-                    text: 'All',
-                    value: 'All',
-                  }
-                }
+              defaultValue='All'
             />
           </Grid.Column>
           <Grid.Column width={8}>
