@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Loader, Grid, Header, Comment, Form, Button, Card, Image } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { Messages } from '/imports/api/message/message'
+import NavBar from '/imports/ui/components/NavBar'
 import Conversation from '/imports/ui/components/Conversation'
 import ConversationList from '/imports/ui/components/ConversationList'
 
@@ -19,9 +20,11 @@ class MessagesPage extends React.Component {
   renderPage() {
     return (
       <div className='user-home'>
+        <NavBar>
+          <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
+        </NavBar>
         <Grid padded>
           <Grid.Column width={4}>
-            <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
             <Card fluid>
               <Card.Content>
                 <Card.Header>Your Conversations</Card.Header>
