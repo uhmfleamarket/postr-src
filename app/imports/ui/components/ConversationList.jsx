@@ -7,7 +7,7 @@ class Conversation extends React.Component {
   render() {
     return (<>
         {this.props.messages.map((convo) => (
-          <Card as={NavLink} to="/messages">
+          <Card as={NavLink} to={"/messages/"+convo._id}>
             <Card.Content>
               <Image floated='left' size='tiny' src={convo.image}/>
               <Card.Header>{convo.subject}</Card.Header>

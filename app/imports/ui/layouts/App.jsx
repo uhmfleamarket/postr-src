@@ -31,6 +31,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <ProtectedRoute exact path="/userhome" component={UserHome}/>
               <ProtectedRoute exact path="/messages" component={MessagesPage}/>
+              <ProtectedRoute exact path="/messages/:_id" component={MessagesPage}/>
               <ProtectedRoute exact path="/newpost" component={NewPost}/>
               <ProtectedRoute exact path="/userprofilepage" component={UserProfilePage}/>
               <ProtectedRoute exact path="/itemview/:_id" component={ItemView}/>

@@ -8,13 +8,6 @@ import Conversation from '/imports/ui/components/Conversation'
 import ConversationList from '/imports/ui/components/ConversationList'
 
 class MessagesPage extends React.Component {
-  state = { currentConvo: null }
-
-  setConvo = (convo) => {
-    return function() {
-      this.setState({currentConvo: convo})
-    }.bind(this)
-  }
 
   render() {
     if(this.props.ready)
@@ -24,7 +17,6 @@ class MessagesPage extends React.Component {
   }
 
   renderPage() {
-    console.log(Meteor.user())
     return (
       <div className='user-home'>
         <Grid padded>
@@ -35,21 +27,12 @@ class MessagesPage extends React.Component {
                 <Card.Header>Your Conversations</Card.Header>
               </Card.Content>
               <Card.Content>
-                {/*this.props.messages.map((convo) => (
-                  <Card onClick={this.setConvo(convo)}>
-                    <Card.Content>
-                      <Image floated='left' size='tiny' src={convo.image}/>
-                      <Card.Header>{convo.subject}</Card.Header>
-                      <Card.Meta>{convo.from}</Card.Meta>
-                    </Card.Content>
-                  </Card>
-                ))*/}
                 <ConversationList messages={this.props.messages} />
               </Card.Content>
             </Card>
           </Grid.Column>
           <Grid.Column width={12}>
-            {this.renderConvo(this.state.currentConvo)}
+            {this.renderConvo(this.props.convo)}
           </Grid.Column>
         </Grid>
       </div>
@@ -82,11 +65,19 @@ MessagesPage.propTypes = {
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-export default withTracker(() => {
+export default withTracker(({match}) => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Message');
+  const messages = Messages.find({parentMessage:"NONE"}).fetch()
+  let convo = null
+  if(messages){
+    const c = messages.filter((msg) => msg._id === match.params._id)
+    if(c.length > 0)
+      convo = c[0]
+  }
   return {
-    messages: Messages.find({parentMessage:"NONE"}).fetch(),
+    convo: !!convo ? convo : null,
+    messages: messages,
     ready: subscription.ready(),
   };
 })(MessagesPage);

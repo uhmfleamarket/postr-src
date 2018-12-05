@@ -86,7 +86,6 @@ class UserProfilePage extends React.Component {
   }
 
   renderPage() {
-    console.log(this.props.items)
     return (
       <div className='profile-bg'>
       <AutoForm schema={ProfileSchema} model={Meteor.user().profile} onSubmit={this.saveChanges}>
