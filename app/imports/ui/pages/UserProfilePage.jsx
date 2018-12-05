@@ -1,27 +1,91 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { Loader, Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
+import { AutoForm, ErrorsField, SubmitField, TextField, LongTextField } from 'uniforms-semantic'
 import { NavLink } from 'react-router-dom';
 import StashItem from '../components/StashItem';
 import NavBar from '/imports/ui/components/NavBar'
+import SimpleSchema from 'simpl-schema';
+import { Messages, MessageSchema } from '/imports/api/message/message'
 
 /** A simple static component to render some text for the landing page. */
 
+const ProfileSchema = new SimpleSchema({
+    name: { type: String },
+    picture: { type: String },
+    phone: { type: String },
+    address: { type: String },
+  })
+
 class UserProfilePage extends React.Component {
+  state = {edit: false}
 
-  state = { EditingMode:  0 }
+  editProfile = (e) => {
+    e.preventDefault()
+    this.setState({edit:true})
+  }
 
-  editProfile = () => this.setState(previousState => ({ EditingMode: 1 }))
+  saveChanges = (data) => {
+    Meteor.users.update(Meteor.userId(), {$set: {
+      "profile.name":data.name,
+      "profile.picture":data.picture,
+      "profile.phone":data.phone,
+      "profile.address":data.address,
+    }})
+    this.setState({edit:false})
+  }
 
-  editImage = () => this.setState(previousState => ({ EditingMode: 2 }))
+  username() {
+    return this.state.edit ? (
+        <TextField name="name" />
+    ) : (
+      <Card.Header>
+        {Meteor.user().profile.name}
+      </Card.Header>
+    )
+  }
 
-  editContact = () => this.setState(previousState => ({ EditingMode: 3 }))
+  address() {
+    return this.state.edit ? (
+        <TextField name="address" />
+    ) : (
+      <Card.Description>
+        {Meteor.user().profile.address}
+      </Card.Description>
+    )
+  }
 
-  finishEdits = () => this.setState(previousState => ({ EditingMode: 0 }))
+  phone() {
+    return this.state.edit ? (
+        <TextField name="phone" />
+    ) : (
+      <Card.Meta>
+        {Meteor.user().profile.phone}
+      </Card.Meta>
+    )
+  }
+
+  picture() {
+    return this.state.edit ? (
+        <TextField name="picture" />
+    ) : (
+      <Image src={Meteor.user().profile.picture} />
+    )
+  }
 
   render() {
+    if(this.props.ready)
+      return this.renderPage()
+    else
+      return <Loader active>Getting data</Loader>;
+  }
+
+  renderPage() {
     return (
       <div className='profile-bg'>
+      <AutoForm schema={ProfileSchema} model={Meteor.user().profile} onSubmit={this.saveChanges}>
         <NavBar>
           <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
         </NavBar>
@@ -40,22 +104,18 @@ class UserProfilePage extends React.Component {
               <Grid.Column width={3}>
                 <Card textalign="center" style={{width:'100%'}}>
                   <Card.Content>
-                    <Image src={Meteor.user().profile.picture} />
+                      {this.picture()}
                     <br />
-                    <Card.Header>
-                      {Meteor.user().profile.name}
-                    </Card.Header>
-                    <Card.Description>
-                      {Meteor.user().profile.address}
-                    </Card.Description>
-                    <Card.Meta>
-                      {Meteor.user().profile.phone}
-                    </Card.Meta>
+                      {this.username()}
+                      {this.address()}
+                      {this.phone()}
                   </Card.Content>
                 </Card>
-                <Button fluid onClick={this.editProfile}>Edit Name</Button>
-                <Button fluid onClick={this.editImage}>Change Profile Image</Button>
-                <Button fluid onClick={this.editContact}>Edit Contact Info</Button>
+                {this.state.edit ? (
+                    <Button fluid>Save</Button>
+                  ):(
+                    <Button fluid onClick={this.editProfile}>Edit Profile</Button>
+                )}
               </Grid.Column>
               <Grid.Column width={4}>
                 <Card>
@@ -82,9 +142,22 @@ class UserProfilePage extends React.Component {
             </Grid.Row>
           </Grid>
         </Container>
+      </AutoForm>
       </div>
     );
   }
 }
 
-export default UserProfilePage;
+UserProfilePage.propTypes = {
+  //item: PropTypes.object.isRequired,
+  //owner: PropTypes.object.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+export default withTracker(() => {
+  const subscription = Meteor.subscribe('Message');
+  return {
+    messages: Messages.find({parentMessage:"NONE"}).fetch(),
+    ready: subscription.ready(),
+  };
+})(UserProfilePage);
