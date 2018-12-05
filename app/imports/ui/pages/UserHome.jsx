@@ -72,6 +72,8 @@ class UserHome extends React.Component {
       },
    ];
 
+    Meteor.loginWithPassword('john@foo.com', 'changeme');
+
     return (
       <div className='user-home'>
         {/*TOP COMPONENTS*/}

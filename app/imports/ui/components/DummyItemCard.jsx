@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card, Image, Header, Button, Icon } from 'semantic-ui-react';
+import { Card, Image, Header, Button, Icon, Confirm } from 'semantic-ui-react';
 import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ConditionBar from '/imports/ui/components/ConditionBar';
 import { Items } from '/imports/api/item/item';
+import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class DummyItemCard extends React.Component {
@@ -13,8 +14,13 @@ class DummyItemCard extends React.Component {
       // update is a switch that triggers the state change which refreshes the page.
       // the value of the boolean does not matter, just the fact that it changes is what updates the page.
       update: false,
+      // open is used for the delete post confirmation box
+      open: false,
     };
     this.addToStash = this.addToStash.bind(this);
+    this.openDelete = this.openDelete.bind(this);
+    this.cancelDelete = this.cancelDelete.bind(this);
+    this.confirmDelete = this.confirmDelete.bind(this);
   }
 
   addToStash() {
@@ -22,6 +28,21 @@ class DummyItemCard extends React.Component {
       console.log(error.message) :
       console.log('Success.')));
     this.setState({ update: !this.state.update });
+  }
+
+  openDelete() {
+    this.setState({ open: true });
+  }
+
+  cancelDelete() {
+    this.setState({ open: false });
+  }
+
+  confirmDelete() {
+    Items.remove(this.props.item._id, (error) => (error ?
+      console.log(error.message) :
+      console.log('Success.')));
+    this.setState({ open: false });
   }
 
   render() {
@@ -40,6 +61,18 @@ class DummyItemCard extends React.Component {
           <Button color='green' icon onClick={this.addToStash}>
             <Icon inverted name='plus' />
           </Button>
+          {
+            this.props.item.owner === Meteor.user().username
+            ?
+              <Card.Content>
+                <Button fluid color='red' icon onClick={this.openDelete}>
+                 <Header inverted>Delete Your Post</Header>
+                </Button>
+                <Confirm open={this.state.open} onCancel={this.cancelDelete} onConfirm={this.confirmDelete}/>
+              </Card.Content>
+              :
+              <div></div>
+          }
         </Card>
     );
   }
