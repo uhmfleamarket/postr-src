@@ -5,6 +5,7 @@ import { Loader, Grid, Header, Comment, Form, Button, Card, Image } from 'semant
 import { NavLink } from 'react-router-dom';
 import { Messages } from '/imports/api/message/message'
 import Conversation from '/imports/ui/components/Conversation'
+import ConversationList from '/imports/ui/components/ConversationList'
 
 class MessagesPage extends React.Component {
   state = { currentConvo: null }
@@ -34,7 +35,7 @@ class MessagesPage extends React.Component {
                 <Card.Header>Your Conversations</Card.Header>
               </Card.Content>
               <Card.Content>
-                {this.props.messages.map((convo) => (
+                {/*this.props.messages.map((convo) => (
                   <Card onClick={this.setConvo(convo)}>
                     <Card.Content>
                       <Image floated='left' size='tiny' src={convo.image}/>
@@ -42,7 +43,8 @@ class MessagesPage extends React.Component {
                       <Card.Meta>{convo.from}</Card.Meta>
                     </Card.Content>
                   </Card>
-                ))}
+                ))*/}
+                <ConversationList messages={this.props.messages} />
               </Card.Content>
             </Card>
           </Grid.Column>

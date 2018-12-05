@@ -9,6 +9,7 @@ import StashItem from '../components/StashItem';
 import NavBar from '/imports/ui/components/NavBar'
 import SimpleSchema from 'simpl-schema';
 import { Messages, MessageSchema } from '/imports/api/message/message'
+import ConversationList from '/imports/ui/components/ConversationList'
 
 /** A simple static component to render some text for the landing page. */
 
@@ -119,9 +120,9 @@ class UserProfilePage extends React.Component {
               </Grid.Column>
               <Grid.Column width={4}>
                 <Card>
-                  <Card.Header>Past Meetups</Card.Header>
+                  <Card.Header>Conversations</Card.Header>
                   <Card.Content>
-                    {/*<StashItem></StashItem>*/}
+                    <ConversationList messages={this.props.messages} />
                   </Card.Content>
                 </Card>
               </Grid.Column>
@@ -149,8 +150,7 @@ class UserProfilePage extends React.Component {
 }
 
 UserProfilePage.propTypes = {
-  //item: PropTypes.object.isRequired,
-  //owner: PropTypes.object.isRequired,
+  messages: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
