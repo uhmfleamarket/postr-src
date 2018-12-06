@@ -3,7 +3,6 @@ import { Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
-import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class NavBar extends React.Component {
@@ -25,7 +24,7 @@ class NavBar extends React.Component {
             <Grid.Column width="1" floated="right">
               <LogoutButton/>
               <Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
-              <Button as={NavLink} exact to="/userprofilepage" floated="right">{Meteor.user().username}</Button>
+              <Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>

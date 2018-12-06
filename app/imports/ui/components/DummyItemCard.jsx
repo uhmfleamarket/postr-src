@@ -4,7 +4,6 @@ import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ConditionBar from '/imports/ui/components/ConditionBar';
 import { Items } from '/imports/api/item/item';
-import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class DummyItemCard extends React.Component {
