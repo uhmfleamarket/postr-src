@@ -22,7 +22,7 @@ class NavBar extends React.Component {
             <Grid.Column width={center_width}>
               {this.props.title}
             </Grid.Column>
-            <Grid.Column width="4" floated="right">
+            <Grid.Column width="1" floated="right">
               <LogoutButton/>
               <Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
               <Button as={NavLink} exact to="/userprofilepage" floated="right">{Meteor.user().username}</Button>

@@ -19,7 +19,7 @@ class MessagesPage extends React.Component {
 
   renderPage() {
     return (
-      <div className='user-home'>
+      <div className='message'>
         <NavBar>
           <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
         </NavBar>
