@@ -46,14 +46,6 @@ class DummyItemCard extends React.Component {
   }
 
   render() {
-    console.log(
-      Meteor.users
-        .find({ _id: Meteor.users
-            .find({ username: this.props.item.owner })
-            .fetch()[0]._id })
-        .fetch()[0].profile.picture
-    );
-
     return (
         <Card>
           <Card.Content as={NavLink} exact to={"/itemview/"+this.props.item._id} >

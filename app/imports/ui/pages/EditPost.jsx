@@ -5,42 +5,8 @@ import {AutoForm, TextField, NumField, SelectField, SubmitField, HiddenField, Lo
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 import ImagesUploader from 'react-images-uploader';
-import NavBar from '/imports/ui/components/NavBar'
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
-
-class PostrUploader extends ImagesUploader {
-  constructor(props) {
-    super(props);
-
-    this.handleImageChange = this.handleImageChange.bind(this);
-  }
-
-  loadImages(files, url, onLoadEnd) {
-    console.log(this.images);
-  }
-
-  handleImageChange(e) {
-    console.log(e);
-    e.preventDefault();
-    this.setState({
-      loadState: 'loading',
-    });
-
-
-    console.log(this.state);
-    // let imagePreviewUrls = this.state.imagePreviewUrls.concat(["http://localhost:3000/images/textbooks.jpg"])
-    // this.setState({
-    //   images: this.state.images.concat(files),
-    // });
-    this.setState({
-                  imagePreviewUrls: this.state.imagePreviewUrls.concat(["http://localhost:3000/images/textbooks.jpg"]),
-                  optimisticPreviews: [],
-                  loadState: 'success',
-    });
-    console.log(this.state);
-  }
-}
 
 /** Renders the Page for adding a document. */
 class AddItem extends React.Component {
@@ -75,8 +41,6 @@ class AddItem extends React.Component {
 
     console.log(this.state);
     return (
-      <div className='profile-bg'>
-        <NavBar />
         <Grid container centered>
           <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ItemSchema} onSubmit={this.submit}>
             <Grid.Row>
@@ -87,7 +51,7 @@ class AddItem extends React.Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <PostrUploader
+              <ImagesUploader
                       url="http://localhost:3000/#/newpost"
                       onLoadEnd={
                         (err) => {
@@ -122,7 +86,6 @@ class AddItem extends React.Component {
             </Grid.Row>
           </AutoForm>
         </Grid>
-      </div>
     );
   }
 }

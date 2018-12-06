@@ -23,8 +23,8 @@ class LoginButton extends React.Component {
         this.setState({ loggedIn: false });
       }
     }.bind(this);
-    Meteor.loginWithCas(callback);
-
+    // Meteor.loginWithCas(callback);
+    Meteor.loginWithPassword('john@foo.com', 'changeme');
     return false;
   }
 
