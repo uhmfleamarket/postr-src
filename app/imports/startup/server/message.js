@@ -27,7 +27,6 @@ Meteor.publish('Conversation', function publish(parentMessage) {
 Meteor.publish('Message', function publish() {
   if(this.userId){
     const email = Meteor.users.findOne(this.userId).services.cas.id;
-    return Messages.find({to: email});
+    return Messages.find({ to: email });
   }
 });
-

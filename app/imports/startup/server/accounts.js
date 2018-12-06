@@ -10,7 +10,7 @@ function createUser(email, password, role) {
     username: email,
     email: email,
     password: password,
-    profile: {rating: 3, picture: "https://react.semantic-ui.com/images/avatar/large/matthew.png", name: email},
+    profile: { rating: 3, picture: "https://react.semantic-ui.com/images/avatar/large/matthew.png", name: email },
   });
   if (role === 'admin') {
     Roles.addUsersToRoles(userID, 'admin');

@@ -153,7 +153,7 @@ class UserProfilePage extends React.Component {
 }
 
 UserProfilePage.propTypes = {
-  messages: PropTypes.object.isRequired,
+  messages: PropTypes.array.isRequired,
   items: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
