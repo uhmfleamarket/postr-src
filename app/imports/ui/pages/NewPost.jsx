@@ -1,8 +1,9 @@
 import React from 'react';
 import { Items, ItemSchema } from '/imports/api/item/item';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Button, Grid, Segment, Header } from 'semantic-ui-react';
 import {AutoForm, TextField, NumField, SelectField, SubmitField, HiddenField, LongTextField, ErrorsField } from 'uniforms-semantic';
 import { Bert } from 'meteor/themeteorchef:bert';
+import { NavLink } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import ImagesUploader from 'react-images-uploader';
 import NavBar from '/imports/ui/components/NavBar'
@@ -71,12 +72,14 @@ class AddItem extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
-    const categories = ['All', 'Textbooks', 'Appliances', 'Furniture', 'Vehicles', 'Tech', 'Clothes', 'Tools'];
+    const categories = ['Textbooks', 'Appliances', 'Furniture', 'Vehicles', 'Tech', 'Clothes', 'Tools'];
 
     console.log(this.state);
     return (
       <div className='profile-bg'>
-        <NavBar />
+        <NavBar>
+          <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
+        </NavBar>
         <Grid container centered>
           <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ItemSchema} onSubmit={this.submit}>
             <Grid.Row>
@@ -114,9 +117,9 @@ class AddItem extends React.Component {
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' value='foo@bar.com'/>
+                <HiddenField name='owner' value={Meteor.user().username}/>
                 <HiddenField name='active' value='true'/>
-                {/*<HiddenField name='images' value={[]}/>*/}
+                <HiddenField name='images' value={[]}/>
                 <HiddenField name='stashed' value='false'/>
               </Grid.Column>
             </Grid.Row>

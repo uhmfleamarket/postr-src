@@ -3,7 +3,6 @@ import { Button, Grid, Icon, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
-import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class NavBar extends React.Component {
@@ -12,7 +11,6 @@ class NavBar extends React.Component {
       var center_width = this.props.center_width;
     else
       var center_width = 8;
-    console.log(center_width);
     return (
         <Grid container>
           <Grid.Row>
