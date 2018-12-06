@@ -117,7 +117,7 @@ class AddItem extends React.Component {
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' value='foo@bar.com'/>
+                <HiddenField name='owner' value={Meteor.user().username}/>
                 <HiddenField name='active' value='true'/>
                 <HiddenField name='images' value={[]}/>
                 <HiddenField name='stashed' value='false'/>
