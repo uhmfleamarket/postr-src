@@ -26,8 +26,8 @@ class LogoutButton extends React.Component {
   }
 
   render() {
-    return Meteor.userId() !== null ? 
-          <Button floated="right" onClick={this.casLogout}>Logout</Button>
+    return Meteor.userId() !== null ?
+          <Button color='yellow' floated="right" onClick={this.casLogout}>Logout</Button>
           :
           <Redirect to="/" />
   }

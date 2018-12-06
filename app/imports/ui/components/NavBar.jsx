@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Grid } from 'semantic-ui-react';
+import { Button, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
@@ -23,8 +23,12 @@ class NavBar extends React.Component {
             </Grid.Column>
             <Grid.Column width="1" floated="right">
               <LogoutButton/>
-              <Button as={NavLink} exact to="/messages" floated="right">Messages</Button>
-              <Button as={NavLink} exact to="/userprofilepage" floated="right">User</Button>
+              <Button color='yellow' as={NavLink} exact to="/messages" floated="right">
+                <Icon name='chat'/>
+              </Button>
+              <Button color='yellow' as={NavLink} exact to="/userprofilepage" floated="right">
+                <Icon name='user'/>
+              </Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
