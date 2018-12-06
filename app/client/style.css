@@ -15,6 +15,8 @@
 .profile-bg {
   background-color: #e0fbff;
   font-family: 'Open Sans', Tahoma, sans-serif;
+  padding-top: 15px;
+
 }
 
 .name {
@@ -41,6 +43,12 @@
 
 .postr-logo {
   padding-top: 100px;
+}
+
+.message {
+  background-color: #e0fbff;
+  height: 100%;
+  padding-top: 15px;
 }
 
 .user-home {
