@@ -71,12 +71,14 @@ class AddItem extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
-    const categories = ['All', 'Textbooks', 'Appliances', 'Furniture', 'Vehicles', 'Tech', 'Clothes', 'Tools'];
+    const categories = ['Textbooks', 'Appliances', 'Furniture', 'Vehicles', 'Tech', 'Clothes', 'Tools'];
 
     console.log(this.state);
     return (
       <div className='profile-bg'>
-        <NavBar />
+        <NavBar>
+          <Button as={NavLink} exact to="/userhome">{'<'} Browse Items</Button>
+        </NavBar>
         <Grid container centered>
           <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ItemSchema} onSubmit={this.submit}>
             <Grid.Row>
@@ -116,7 +118,7 @@ class AddItem extends React.Component {
                 <ErrorsField/>
                 <HiddenField name='owner' value='foo@bar.com'/>
                 <HiddenField name='active' value='true'/>
-                {/*<HiddenField name='images' value={[]}/>*/}
+                <HiddenField name='images' value={[]}/>
                 <HiddenField name='stashed' value='false'/>
               </Grid.Column>
             </Grid.Row>
