@@ -13,6 +13,119 @@
   ],
 
   "defaultItems": [
+    {
+      "name": "Iron",
+      "price": 5.00,
+      "quality": 50,
+      "owner": "john@foo.com",
+      "description": "Used for making your clothes nice.",
+      "images": ["/images/iron-1.jpg", "/images/iron-2.jpg"],
+      "category": "Appliances",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Fan",
+      "price": 10.00,
+      "quality": 75,
+      "owner": "foo",
+      "description": "Used for making your room cool.",
+      "images": ["/images/boxfan.jpg"],
+      "category": "Appliances",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Textbook",
+      "price": 50.00,
+      "quality": 100,
+      "owner": "john@foo.com",
+      "description": "Used for making your brain good.",
+      "images": ["/images/textbooks.jpg"],
+      "category": "Textbooks",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Car",
+      "price": 1000.00,
+      "quality": 20,
+      "owner": "foo",
+      "description": "Used for moving faster than usual.",
+      "images": ["/images/usedcar.png"],
+      "category": "Vehicles",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Laptop",
+      "price": 500.00,
+      "quality": 50,
+      "owner": "john@foo.com",
+      "description": "Used for computer things why should I describe a laptop it's 2018 you know what it does.",
+      "images": ["/images/laptop.jpg"],
+      "category": "Tech",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Sock",
+      "price": 0.69,
+      "quality": 50,
+      "owner": "foo",
+      "description": "Where else would you put your milly rock.",
+      "images": ["/images/sock.jpg"],
+      "category": "Clothes",
+      "stashed": false,
+      "active": true
+    },
+    {
+      "name": "Bean",
+      "price": 20.00,
+      "quality": 100,
+      "owner": "foo",
+      "description": "Used for eat.",
+      "images": ["/images/beans.jpg"],
+      "category": "Tools",
+      "stashed": false,
+      "active": true
+    }
+  ],
+
+  "defaultMessages": [
+    {
+      "to": "random",
+      "from": "someone",
+      "date": "earlier",
+      "item": "NONE",
+      "subject": "test message",
+      "body": "This is a test message....",
+      "parentMessage": "NONE",
+      "image": "/images/poof22.png",
+      "_id": "0122"
+    },
+    {
+      "to": "haigh",
+      "from": "foo",
+      "date": "earlier",
+      "item": "NONE",
+      "subject": "test message",
+      "body": "This is a test message....",
+      "parentMessage": "NONE",
+      "image": "/images/poof22.png",
+      "_id": "0123"
+    },
+    {
+      "from": "haigh",
+      "to": "foo",
+      "date": "now",
+      "item": "NONE",
+      "subject": "test message",
+      "body": "This is also a test message....",
+      "parentMessage": "0123",
+      "image": "/images/poof22.png",
+      "_id": "0124"
+    }
   ],
   "cas": {
     "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
