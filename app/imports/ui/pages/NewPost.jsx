@@ -70,7 +70,7 @@ class AddItem extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div className='profile-bg'>
         <NavBar />
         <Grid container centered>
           <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ItemSchema} onSubmit={this.submit}>

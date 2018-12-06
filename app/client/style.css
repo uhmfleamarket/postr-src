@@ -16,7 +16,7 @@
   background-color: #e0fbff;
   font-family: 'Open Sans', Tahoma, sans-serif;
   padding-top: 15px;
-
+  padding-bottom: 15px;
 }
 
 .name {
@@ -49,6 +49,8 @@
   background-color: #e0fbff;
   height: 100%;
   padding-top: 15px;
+  padding-bottom: 15px;
+
 }
 
 .user-home {
