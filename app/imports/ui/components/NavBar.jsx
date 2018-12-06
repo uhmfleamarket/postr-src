@@ -12,7 +12,6 @@ class NavBar extends React.Component {
       var center_width = this.props.center_width;
     else
       var center_width = 8;
-    console.log(center_width);
     return (
         <Grid container>
           <Grid.Row>
