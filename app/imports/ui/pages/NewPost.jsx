@@ -1,8 +1,9 @@
 import React from 'react';
 import { Items, ItemSchema } from '/imports/api/item/item';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Button, Grid, Segment, Header } from 'semantic-ui-react';
 import {AutoForm, TextField, NumField, SelectField, SubmitField, HiddenField, LongTextField, ErrorsField } from 'uniforms-semantic';
 import { Bert } from 'meteor/themeteorchef:bert';
+import { NavLink } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import ImagesUploader from 'react-images-uploader';
 import NavBar from '/imports/ui/components/NavBar'
