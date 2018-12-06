@@ -16,6 +16,7 @@ class LoginButton extends React.Component {
   casLogin(event) {
     event.preventDefault();
     const callback = function loginCallback(error) {
+      console.log('in call back!');
       if (error) {
         console.log(error);
         //TODO: use Bert error
