@@ -1,5 +1,4 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Loader, Grid, Icon, Button, Image, Container, Card } from 'semantic-ui-react';
@@ -161,9 +160,10 @@ UserProfilePage.propTypes = {
 export default withTracker(() => {
   const msgsub = Meteor.subscribe('Message');
   const itemsub = Meteor.subscribe('AllItems');
+  const username = msgsub.ready() ? Meteor.user().username : "NONE";
   return {
     messages: Messages.find({parentMessage:"NONE"}).fetch(),
-    items: Items.find({owner: "foo"}).fetch(),
+    items: Items.find({owner: username}).fetch(),
     ready: msgsub.ready() && itemsub.ready(),
   };
 })(UserProfilePage);

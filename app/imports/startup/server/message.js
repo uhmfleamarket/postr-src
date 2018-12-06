@@ -26,7 +26,11 @@ Meteor.publish('Conversation', function publish(parentMessage) {
 
 Meteor.publish('Message', function publish() {
   if(this.userId){
+    console.log(this.currentUser)
+    console.log(Meteor.users.findOne(this.userId))
     const email = Meteor.users.findOne(this.userId).services.cas.id;
     return Messages.find({ to: email });
   }
+  else
+    console.log("ERROR NO USER ID")
 });

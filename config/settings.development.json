@@ -1,8 +1,8 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "profilePicture": "/images/foo.jpg" },
-    { "email": "john@foo.com", "password": "changeme", "profilePicture": "/images/john.jpg" },
-    { "email": "foo", "password": "changeme", "profilePicture": "/images/mia.jpg" }
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "profilePicture": "/images/foo.jpg", "services":{"cas":{"id":"admin"}} },
+    { "email": "john@foo.com", "password": "changeme", "profilePicture": "/images/john.jpg", "services":{"cas":{"id":"john"}} },
+    { "email": "foo", "password": "changeme", "profilePicture": "/images/mia.jpg", "services":{"cas":{"id":"foo"}} }
   ],
 
   "defaultData": [
@@ -91,8 +91,7 @@
       "active": true
     }
   ],
-
-  "defaultMessages": [
+  "defaultMessages":[
     {
       "to": "random",
       "from": "someone",
@@ -144,7 +143,6 @@
     "cmoore",
     "jx2",
     "davonm",
-    "haigh",
-    "ziwu"
+    "haigh"
   ]
 }
