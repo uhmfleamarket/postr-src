@@ -57,13 +57,7 @@ class DummyItemCard extends React.Component {
               circular
               floated='left'
               size='mini'
-              src={
-                Meteor.users
-                  .find({ _id: Meteor.users
-                      .find({ username: this.props.item.owner })
-                      .fetch()[0]._id })
-                  .fetch()[0].profile.picture
-              }
+              src='/images/john.jpg'
             />
             <Card.Header>{this.props.item.owner}</Card.Header>
             <ConditionBar health={this.props.item.quality.toString}/>

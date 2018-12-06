@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Grid, Icon, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Meteor } from 'meteor/meteor';
 import LogoutButton from './LogoutButton';
 import { Meteor } from 'meteor/meteor';
 
